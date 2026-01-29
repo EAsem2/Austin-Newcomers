@@ -1,0 +1,424 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  background-color: #fbfaf6;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
+}
+
+.hero-left {
+  font-family: 'Poppins', sans-serif;
+}
+
+.welcome {
+  font-size: 80px;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+}
+
+.welcome,
+.to-austin {
+  line-height: 1.1;
+}
+
+.to-austin {
+  font-size: 60px;
+  font-weight: 450;
+  margin: 0;
+  color: #333;
+  padding-left: 10px;
+}
+
+.to-austin .austin {
+  color: #7a7a7a;
+  font-weight: 700;
+}
+
+.resource-hub {
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0;
+  color: #333;
+  padding-left: 10px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  padding-top: 10px;
+}
+
+.find-btn,
+.add-btn {
+  padding: 10px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.find-btn {
+  background-color: #666a86;
+  color: white;
+}
+
+.add-btn {
+  background-color: #ffffff;
+  border: 2px solid #666a86;
+  color: #666a86;
+}
+
+.hero-right img {
+  width: 300px;
+  height: auto;
+  padding-right: 20pxs;
+}
+
+/* COMMUNITY SPOTLIGHTS SECTION */
+.spotlights {
+  padding: 60px 50px;
+  text-align: center;
+}
+
+.editors-box {
+  display: inline-block;
+  background-color: #ffdfe4;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-family: 'Avenir', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: #fea8b4;
+}
+
+.spotlights-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 45.3px;
+  font-weight: 700;
+  margin: 10px 0 5px 0;
+  color: #0b0a0a;
+}
+
+.spotlights-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24.7px;
+  color: #505050;
+  margin-bottom: 40px;
+}
+
+/* LAYOUT FOR 3 CARDS */
+.spotlights-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* all cards match tallest */
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* OUTER CARD CONTAINER */
+#spotlightsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
+}
+
+/* CARD */
+.spot-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  perspective: 1000px;
+  cursor: pointer;
+  min-height: 320px; /* ensures a baseline size */
+  height: auto;      /* allows it to grow */
+}
+
+
+/* INNER WRAPPER */
+.spot-card-inner {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+
+.spot-card.flipped .spot-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* CARD FACES */
+.spot-card-front,
+.spot-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 30px;
+  padding: 12px;
+  border: #0b0a0a 1px solid;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'Quicksand', sans-serif;
+  overflow: visible; /* allow full content */
+  background-color: #f9f9f9;
+}
+
+.spot-card-front,
+.spot-card-back {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.spot-card-inner {
+  display: grid;
+  grid-template-areas: "front";
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.spot-card.flipped .spot-card-inner {
+  transform: rotateY(180deg);
+}
+
+.spot-card-front {
+  grid-area: front;
+  backface-visibility: hidden;
+}
+
+.spot-card-back {
+  grid-area: front;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+/* TEXT */
+.spot-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 35px;
+  color: #333;
+}
+
+.spot-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 4px;
+  white-space: normal;
+}
+
+.spot-desc + hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 6px 0;
+}
+
+/* INFO ROWS */
+.spot-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* TAG */
+.tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 10.9px;
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+/* BACK FACE DETAILS */
+.spot-card-back h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.spot-card-back p,
+.spot-card-back a {
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+
+  /* ------------------------------ */
+  /* HERO SECTION */
+  /* ------------------------------ */
+
+  .hero {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .hero-left {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .welcome {
+    font-size: 48px;
+  }
+
+  .to-austin {
+    font-size: 36px;
+    padding-left: 0;
+  }
+
+  .resource-hub {
+    font-size: 20px;
+    padding-left: 0;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .find-btn,
+  .add-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  .hero-right img {
+    width: 70%;
+    max-width: 260px;
+    padding: 0;
+  }
+
+
+  /* ------------------------------ */
+  /* SPOTLIGHTS SECTION */
+  /* ------------------------------ */
+
+  .spotlights {
+    padding: 40px 20px;
+  }
+
+  .spotlights-title {
+    font-size: 32px;
+  }
+
+  .spotlights-subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .editors-box {
+    font-size: 14px;
+    padding: 6px 16px;
+  }
+
+
+  /* ------------------------------ */
+  /* SPOTLIGHT CARDS (STACKED) */
+  /* ------------------------------ */
+
+  #spotlightsContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .spot-card {
+    max-width: 360px;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  /* FIX: allow natural height, no absolute positioning */
+  .spot-card-inner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+  }
+
+  /* FRONT + BACK: NO absolute on mobile */
+  .spot-card-front,
+  .spot-card-back {
+    position: relative;
+    width: 100%;
+    height: auto;
+    backface-visibility: hidden;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #000;
+  }
+
+  /* Back face still flips, but stays in flow */
+  .spot-card-back {
+    transform: rotateY(180deg);
+  }
+
+  .spot-card.flipped .spot-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Text scaling */
+  .spot-name {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  .spot-desc {
+    font-size: 13px;
+  }
+
+  .spot-info {
+    font-size: 13px;
+  }
+
+  .icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .tag {
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Austin Newcomers</title>
+
+  <!-- Your existing styles -->
+  <link href="../css/Header.css" rel="stylesheet" />
+  <link href="../css/A.Resource.css" rel="stylesheet" />
+  <link href="../css/Footer.css" rel="stylesheet" />
+  <link href="../css/A.Resource.css" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-area">
+        <img src="../Images/Austin_Newcomers_Logo (2).png" alt="Logo">
+    </div>
+<nav>
+<div class="nav-item">
+<a href="../html/Home.html">Home</a>
+</div>
+
+<div class="nav-item dropdown">
+<a href="../html/Resources.html" class="dropbtn">Resources</a>
+
+<div class="dropdown-content">
+  <a href="../html/AddResource.html">Add Resource</a>
+</div>
+</div>
+
+<div class="nav-item">
+<a href="../html/AboutUs.html">About Us</a>
+</div>
+
+<a href="../html/ContactUs.html" class="contact-btn">Contact Us</a>
+</nav>
+<button class="navicon" id="navicon">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</header>
+
+
+  <!-- Resource Directory Section -->
+<section class="resource-header">
+  <div class="header-left">
+    <h1 class="title">Resource Directory</h1>
+    <p class="subtitle">Find the help you need closest</p>
+  </div>
+
+  <div class="header-right"> 
+  <div class="search-wrapper">
+   
+  <div class="spot-info">
+    <img src="../Images/search.png" class="icon">
+  </div>
+  <input type="text" id="searchInput" placeholder="Search Resources" /> 
+  </div> </div>
+</section>
+
+<main class="resource-main">
+  <section class="filters">
+    <button class="filter-btn all-btn" data-category="All">All</button>
+    <button class="filter-btn" data-category="Transportation">Transportation</button>
+    <button class="filter-btn" data-category="Government Assistance">Government Assistance</button>
+    <button class="filter-btn" data-category="Food">Food</button>
+    <button class="filter-btn" data-category="3rd Party Assistance">3rd Party Assistance</button>
+    <button class="filter-btn" data-category="Legal">Legal</button>
+    <button class="filter-btn" data-category="Recreational Activities">Recreational Activities</button>
+    <button class="filter-btn" data-category="Inclusivity">Inclusivity</button>
+    <button class="filter-btn" data-category="Education">Education</button>
+    <button class="filter-btn" data-category="Financial Security">Financial Security</button>
+    <button class="filter-btn" data-category="Life Skills">Life Skills</button>
+   </section>
+
+
+  <section id="resourcesGrid" class="resources-grid"></section>
+</main>
+<!-- FOOTER SECTION -->
+<footer class="site-footer">
+  <div class="footer-columns">
+    <!-- Left Column: Main Links -->
+    <div class="footer-column">
+      <h3>Main Links</h3>
+      <ul>
+        <li><a href="../html/Home.html">Home Page</a></li>
+        <li><a href="../html/Resources.html">Resources</a></li>
+        <li><a href="../html/AddResource.html">Add Resources</a></li>
+        <li><a href="../html/AboutUs.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Right Column: Contact Info -->
+    <div class="footer-column">
+      <h3>Contact Information</h3>
+      <ul>
+        <li><a href="../html/ContactUs.html">Form: Contact Us</a></li>
+        <li>Email: <a href="mailto:austin.newcomershub@gmail.com">austin.newcomershub@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Row: Copyright -->
+  <div class="footer-bottom">
+    <p>Copyright © 2026 Welcome Austin’s Newcomers resource-hub/Webmaster Team. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="../js/navi.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

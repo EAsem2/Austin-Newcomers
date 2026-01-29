@@ -1,0 +1,211 @@
+
+@charset "utf-8";
+
+* {box-sizing: border-box;}
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background-color: #f5f8ff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  border-bottom: #333 solid 1px;
+
+  }
+  
+  .logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  }
+
+  .logo-area img {
+  height: 55px;
+  }
+
+  .logo-area h1 {
+  font-size: 26px;
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+  }
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+
+/* Base nav item hover box */
+.nav-item {
+  position: relative;
+  margin: 0 18px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: box-shadow 0.3s ease;
+}
+
+.nav-item:hover {
+  box-shadow: 0 0 0 2px #0077cc;
+}
+
+.nav-item a {
+  font-family: "Quicksand", sans-serif;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.nav-item a:hover {
+  color: #0077cc;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+/* The invisible hover bridge */
+.dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 8px; /* this is the gap size */
+  background: transparent;
+}
+
+/* Dropdown box */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px); /* visually below the gap */
+  left: 0;
+  background: #f5f8ff;
+  min-width: 120px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px #0077cc;
+  padding: 4px 0;
+  z-index: 20;
+}
+
+/* Keep dropdown open on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0px 5px; /* tighter padding */
+  font-size: 14px;   /* slightly smaller text */
+  color: #333;
+  font-family: "Quicksand", sans-serif;
+}
+
+
+/* KEEP DROPDOWN OPEN ON HOVER */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Original Contact Us button styling */
+.contact-btn {
+  padding: 10px 22px;
+  background-color: #333;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+  margin-left: 18px;
+}
+
+.contact-btn:hover {
+  background-color: #555;
+}
+
+
+
+/* NAVICON (Hamburger Menu) */
+.navicon {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 30px;
+  position: relative;
+}
+
+.navicon span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Show navicon on mobile */
+@media screen and (max-width: 600px) {
+  .navicon {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    right: 0;
+    background-color: #f5f8ff;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    z-index: 10;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  .contact-btn {
+    margin-left: 20px;
+  }
+}
+
+/* Hamburger animation when menu is open */
+.navicon.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.navicon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navicon.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-7px, -7px);
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}

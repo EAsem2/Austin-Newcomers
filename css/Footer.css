@@ -1,0 +1,78 @@
+/* Sets the character encoding to support special characters and symbols */
+@charset "utf-8";
+
+/* Imports the 'Quicksand' font from Google Fonts for a modern, rounded look */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+/* Sets the base text color and a light blue/cream vertical gradient background for the footer */
+footer {
+    color: rgb(0, 0, 0);    
+    background: linear-gradient(to bottom, #fbfaf6, #d3e0ff); 
+}
+
+/* Styles the main footer container: sets font, adds a dashed top border, and manages internal spacing */
+.site-footer {
+  background-color: #f5f8ff;
+  padding: 0px 15px 10px; 
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  border-top: 1px dashed #ccc;
+}
+
+/* Creates a flexible layout to align columns side-by-side with specific spacing (gap) */
+.footer-columns {
+  display: flex;
+  justify-content: flex-start; 
+  gap: 40px; 
+  max-width: 1100px;
+  margin: 0 auto 10px; /* Centers the entire column group horizontally */
+  padding: 0 20px;
+}
+
+/* Sets a fixed width for each individual column to keep the layout consistent */
+.footer-column {
+  width: 220px;
+}
+
+/* Targets the very last column (usually Contact Info) and pushes it to the far right */
+
+/* Styles the headings (h3) inside columns—changing size and color to a bright blue */
+.footer-column h3 {
+  font-size: 1em; 
+  margin-bottom: 10px;
+  color: #0077cc;
+}
+
+/* Removes default bullet points and extra spacing from lists in the footer */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Adds a small space between each list item for better readability */
+.footer-column li {
+  margin-bottom: 6px; 
+}
+
+/* Styles the links: removes underlines, sets color, and shrinks the text slightly */
+.footer-column a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.85em; 
+}
+
+/* Changes the link color to blue and adds an underline when the user hovers over it */
+.footer-column a:hover {
+  color: #0077cc;
+  text-decoration: underline;
+}
+
+/* Styles the very bottom bar (copyright area): centers text, adds a top line, and makes text small */
+.footer-bottom {
+  text-align: center;
+  font-size: 0.75em; 
+  color: #666;
+  border-top: 1px solid #ddd;
+  padding-top: 9px; 
+}

@@ -1,0 +1,48 @@
+.admin-header {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.admin-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.admin-header p {
+  font-size: 18px;
+  color: #555;
+}
+
+.clear-all-btn {
+  margin-top: 15px;
+  background: #c62828;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.clear-all-btn:hover {
+  background: #b71c1c;
+}
+
+/* Delete button on each card */
+.delete-btn {
+  margin-top: 15px;
+  background: #d32f2f;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.delete-btn:hover {
+  background: #b71c1c;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austin Newcomers</title>
+
+    <link href="../css/Header.css" rel="stylesheet">
+    <link href="../css/Contact.css" rel="stylesheet">
+    <link href="../css/Footer.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+      <div class="logo-area">
+          <img src="../Images/Austin_Newcomers_Logo (2).png" alt="Logo">
+      </div>
+<nav>
+<div class="nav-item">
+  <a href="../html/Home.html">Home</a>
+</div>
+
+<div class="nav-item dropdown">
+  <a href="../html/Resources.html" class="dropbtn">Resources</a>
+
+  <div class="dropdown-content">
+    <a href="../html/AddResource.html">Add Resource</a>
+  </div>
+</div>
+
+<div class="nav-item">
+  <a href="../html/AboutUs.html">About Us</a>
+</div>
+
+<a href="../html/ContactUs.html" class="contact-btn">Contact Us</a>
+</nav>
+<button class="navicon" id="navicon">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</header>
+
+
+    <!-- ⭐ HEADING OUTSIDE THE BOX ⭐ -->
+    <div class="contact-header">
+        <h1>Contact Us</h1>
+        <p>Wanna reach out? Leave your info below</p>
+    </div>
+
+
+    <!-- ⭐ CENTERED WHITE BOX ⭐ -->
+    <div class="page-container">
+        <div class="contact-wrapper">
+
+            <form action="../js/send.php" method="POST">
+
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <div class="name-row">
+                        <input class="form-input" type="text" name="first_name" placeholder="First Name" required />
+                        <input class="form-input" type="text" name="last_name" placeholder="Last Name" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input class="form-input" type="email" name="email" placeholder="@gmail.com" required />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input class="form-input" type="tel" name="phone" placeholder="### - ### - ####" required />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Location / Address</label>
+                    <input class="form-input" type="text" name="address" placeholder="123 Main St, Austin, TX" required />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Inquiry / Message</label>
+                    <textarea class="form-textarea" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Message</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+<!-- FOOTER SECTION -->
+<footer class="site-footer">
+    <div class="footer-columns">
+      <!-- Left Column: Main Links -->
+      <div class="footer-column">
+        <h3>Main Links</h3>
+        <ul>
+          <li><a href="../html/Home.html">Home Page</a></li>
+          <li><a href="../html/Resources.html">Resources</a></li>
+          <li><a href="../html/AddResource.html">Add Resources</a></li>
+          <li><a href="../html/AboutUs.html">About Us</a></li>
+        </ul>
+      </div>
+  
+      <!-- Right Column: Contact Info -->
+      <div class="footer-column">
+        <h3>Contact Information</h3>
+        <ul>
+          <li><a href="../html/ContactUs.html">Form: Contact Us</a></li>
+          <li>Email: <a href="mailto:austin.newcomershub@gmail.com">austin.newcomershub@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Bottom Row: Copyright -->
+    <div class="footer-bottom">
+      <p>Copyright © 2026 Welcome Austin’s Newcomers resource-hub/Webmaster Team. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="../js/navi.js"></script>
+</body>
+</html>

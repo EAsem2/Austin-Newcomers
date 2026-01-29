@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austin Newcomers</title>
+    <link href="../css/Header.css" rel="stylesheet">
+    <link href="../css/home.css" rel="stylesheet">
+    <link href="../css/Add.R.css" rel="stylesheet">
+    <link href="../css/Footer.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+      <div class="logo-area">
+          <img src="../Images/Austin_Newcomers_Logo (2).png" alt="Logo">
+      </div>
+<nav>
+<div class="nav-item">
+  <a href="../html/Home.html">Home</a>
+</div>
+
+<div class="nav-item dropdown">
+  <a href="../html/Resources.html" class="dropbtn">Resources</a>
+
+  <div class="dropdown-content">
+    <a href="../html/AddResource.html">Add Resource</a>
+  </div>
+</div>
+
+<div class="nav-item">
+  <a href="../html/AboutUs.html">About Us</a>
+</div>
+
+<a href="../html/ContactUs.html" class="contact-btn">Contact Us</a>
+</nav>
+<button class="navicon" id="navicon">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</header>
+
+  
+
+
+<main class="add-resource-container">
+
+  <h3 class="form-title">Add a Resource</h3>
+  <p class="form-subtext">
+    Help us grow our directory by sharing a local program or service that may be missing.
+  </p>
+
+  <section class="form-box">
+    <form class="resource-form">
+
+      <label>
+  <span>Resource Name</span>
+  <input id="resourceName" type="text">
+</label>
+
+<label>
+  <span>Provider Name</span>
+  <input id="providerName" type="text">
+</label>
+
+<div class="form-row">
+  <label>
+    <span>Category</span>
+    <select id="category">
+      <option value="">Select a category</option>
+      <option>Transportation</option>
+      <option>Financial Security</option>
+      <option>Government Assistance</option>
+      <option>Life skills</option>
+      <option>Food</option>
+      <option>3rd Party Assistance</option>
+      <option>Legal</option>
+      <option>Recreational Activities</option>
+      <option>Inclusivity</option>
+      <option>Education</option>
+    </select>
+  </label>
+
+  <label>
+    <span>Contact Info</span>
+    <input id="contact" type="text">
+  </label>
+</div>
+
+<label>
+  <span>Location / Address</span>
+  <input id="address" type="text">
+</label>
+
+<div class="form-row">
+  <label>
+    <span>Availability</span>
+    <input id="hours" type="text">
+  </label>
+
+  <label>
+    <span>Website URL</span>
+    <input id="website" type="text">
+  </label>
+</div>
+
+<label>
+  <span>Description</span>
+  <textarea id="description" rows="5"></textarea>
+</label>
+
+<button type="submit" id="submitResource" class="submit-btn">Submit Resource</button>
+
+  </form>
+    <div id="successPopup" class="success-popup">
+  <div class="success-content">
+    <span class="checkmark">✔</span>
+    <p>Submitted successfully</p>
+  </div>
+</div>
+
+  </section>
+
+</main>
+<!-- FOOTER SECTION -->
+<footer class="site-footer">
+  <div class="footer-columns">
+    <!-- Left Column: Main Links -->
+    <div class="footer-column">
+      <h3>Main Links</h3>
+      <ul>
+        <li><a href="../html/Home.html">Home Page</a></li>
+        <li><a href="../html/Resources.html">Resources</a></li>
+        <li><a href="../html/AddResource.html">Add Resources</a></li>
+        <li><a href="../html/AboutUs.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Right Column: Contact Info -->
+    <div class="footer-column">
+      <h3>Contact Information</h3>
+      <ul>
+        <li><a href="../html/ContactUs.html">Form: Contact Us</a></li>
+        <li>Email: <a href="mailto:austin.newcomershub@gmail.com">austin.newcomershub@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Row: Copyright -->
+  <div class="footer-bottom">
+    <p>Copyright © 2026 Welcome Austin’s Newcomers resource-hub/Webmaster Team. All Rights Reserved.</p>
+  </div>
+</footer>
+<script src="../js/navi.js"></script>
+<script src="../js/AddResource.js"></script>
+</body>
+</html>
