@@ -1,14 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel – User Submissions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel – User Submissions</title>
+    
+    <style>
+        /* This hides everything until the password is correct */
+        body { display: none; }
+    </style>
 
-  <link href="../css/Header.css" rel="stylesheet">
-  <link href="../css/A.Resource.css" rel="stylesheet">
-  <link href="../css/AdminPanel.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            var pass = prompt("Enter Admin Password:");
+            if (pass === "Austin2024!") { 
+                // Access granted
+                document.write('<style>body { display: block !important; }</style>');
+            } else {
+                // Access denied
+                alert("Incorrect password.");
+                window.location.href = "../index.html";
+            }
+        })();
+    </script>
+
+    <link href="../css/Header.css" rel="stylesheet">
+    <link href="../css/A.Resource.css" rel="stylesheet">
+    <link href="../css/AdminPanel.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,11 +34,6 @@
   <div class="logo-area">
     <img src="../Images/Austin_Newcomers_Logo (2).png" alt="Logo">
   </div>
-  <nav>
-    <div class="nav-item"><a href="../index.html">Home</a></div>
-    <div class="nav-item"><a href="../html/Resources.html">Resources</a></div>
-    <div class="nav-item"><a href="../html/AddResource.html">Add Resource</a></div>
-  </nav>
 </header>
 
 <section class="admin-header">
@@ -38,5 +50,6 @@
 <script src="../js/AdminPanel.js"></script>
 </body>
 </html>
+
 
 
