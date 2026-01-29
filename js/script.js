@@ -9,7 +9,7 @@ let currentSearch = "";
 // Load JSON
 async function loadResources() {
   // Load original JSON
-  const res = await fetch("../js/Resources.json");
+  const res = await fetch("js/Resources.json");
   const jsonResources = await res.json();
 
   // Load user-submitted resources
@@ -66,17 +66,17 @@ function createCardHTML(r) {
 
       <hr class="resource-divider" />
 <div class="spot-info">
-  <img src="../Images/pin.png" class="icon">
+  <img src="Images/pin.png" class="icon">
   <p>${r.address}</p>
 </div>
 
 <div class="spot-info">
-  <img src="../Images/phone.png" class="icon">
+  <img src="Images/phone.png" class="icon">
   <p>${r.contact}</p>
 </div>
 
 <div class="spot-info">
-  <img src="../Images/wall-clock.png" class="icon">
+  <img src="Images/wall-clock.png" class="icon">
   <p>${r.hours}</p>
 </div>
 
@@ -129,3 +129,4 @@ filterButtons.forEach(btn => {
 
 
 loadResources();
+
