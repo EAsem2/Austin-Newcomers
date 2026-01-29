@@ -34,17 +34,17 @@ function createAdminCard(r, index) {
       <hr class="resource-divider" />
 
       <div class="spot-info">
-        <img src="Images/pin.png" class="icon">
+        <img src="../Images/pin.png" class="icon">
         <p>${r.address}</p>
       </div>
 
       <div class="spot-info">
-        <img src="Images/phone.png" class="icon">
+        <img src="../Images/phone.png" class="icon">
         <p>${r.contact}</p>
       </div>
 
       <div class="spot-info">
-        <img src="Images/wall-clock.png" class="icon">
+        <img src="../Images/wall-clock.png" class="icon">
         <p>${r.hours}</p>
       </div>
 
@@ -71,4 +71,5 @@ clearAllBtn.addEventListener("click", () => {
 
 // Load on page start
 loadUserResources();
+
 
