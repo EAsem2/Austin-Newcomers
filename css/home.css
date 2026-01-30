@@ -116,7 +116,7 @@ body {
   margin-bottom: 40px;
 }
 
-/* LAYOUT FOR 3 CARDS */
+/* LAYOUT*/
 .spotlights-cards {
   display: flex;
   justify-content: space-between;
@@ -125,7 +125,6 @@ body {
   margin-top: 40px;
 }
 
-/* OUTER CARD CONTAINER */
 #spotlightsContainer {
   display: flex;
   justify-content: space-between;
@@ -145,8 +144,6 @@ body {
   height: auto;      /* allows it to grow */
 }
 
-
-/* INNER WRAPPER */
 .spot-card-inner {
   position: relative;
   width: 100%;
@@ -157,8 +154,6 @@ body {
 .spot-card.flipped .spot-card-inner {
   transform: rotateY(180deg);
 }
-
-/* CARD FACES */
 .spot-card-front,
 .spot-card-back {
   position: absolute;
@@ -210,8 +205,6 @@ body {
 }
 
 
-
-/* TEXT */
 .spot-name {
   font-size: 20px;
   font-weight: 700;
@@ -233,7 +226,6 @@ body {
   margin: 6px 0;
 }
 
-/* INFO ROWS */
 .spot-info {
   display: flex;
   align-items: center;
@@ -248,7 +240,6 @@ body {
   object-fit: contain;
 }
 
-/* TAG */
 .tag {
   position: absolute;
   top: 12px;
@@ -263,7 +254,6 @@ body {
   border: 1px solid #ddd;
 }
 
-/* BACK FACE DETAILS */
 .spot-card-back h4 {
   margin-bottom: 5px;
   font-size: 16px;
@@ -276,11 +266,6 @@ body {
 }
 
 @media (max-width: 600px) {
-
-  /* ------------------------------ */
-  /* HERO SECTION */
-  /* ------------------------------ */
-
   .hero {
     flex-direction: column;
     padding: 30px 20px;
@@ -328,12 +313,6 @@ body {
     max-width: 260px;
     padding: 0;
   }
-
-
-  /* ------------------------------ */
-  /* SPOTLIGHTS SECTION */
-  /* ------------------------------ */
-
   .spotlights {
     padding: 40px 20px;
   }
@@ -352,11 +331,6 @@ body {
     padding: 6px 16px;
   }
 
-
-  /* ------------------------------ */
-  /* SPOTLIGHT CARDS (STACKED) */
-  /* ------------------------------ */
-
   #spotlightsContainer {
     flex-direction: column;
     gap: 20px;
@@ -368,7 +342,6 @@ body {
     height: auto;
   }
 
-  /* FIX: allow natural height, no absolute positioning */
   .spot-card-inner {
     position: relative;
     width: 100%;
@@ -377,7 +350,6 @@ body {
     transition: transform 0.6s ease;
   }
 
-  /* FRONT + BACK: NO absolute on mobile */
   .spot-card-front,
   .spot-card-back {
     position: relative;
@@ -388,8 +360,6 @@ body {
     border-radius: 20px;
     border: 1px solid #000;
   }
-
-  /* Back face still flips, but stays in flow */
   .spot-card-back {
     transform: rotateY(180deg);
   }
@@ -398,7 +368,6 @@ body {
     transform: rotateY(180deg);
   }
 
-  /* Text scaling */
   .spot-name {
     font-size: 18px;
     margin-top: 20px;
@@ -422,3 +391,4 @@ body {
     padding: 3px 8px;
   }
 }
+
