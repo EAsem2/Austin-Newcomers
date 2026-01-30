@@ -34,13 +34,10 @@ td:nth-child(2) {
     line-height: 1.4;   
 }
 
-
-/*Solid border between rows */
 tr {
     border-bottom: 2px solid rgba(0, 0, 0, 0.615); 
 }
 
-/*Changes background color for when hovering over a row */
 tbody tr:hover {
     background-color: lightgray; 
     transition: 0.3s ease-in-out; 
@@ -53,6 +50,7 @@ th:only-child, td:only-child {
     width: 15%;
 
 }
+
 
 
 
