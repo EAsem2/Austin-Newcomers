@@ -41,7 +41,6 @@
   max-width: 600px;
 }
 
-/* RIGHT SIDE IMAGE */
 .story-image {
   flex: 1;
   display: flex;
@@ -132,11 +131,8 @@
   color: #000000;
   line-height: 1.4;
 }
-
-/* MOBILE RESPONSIVE CONTACT FORM */
 @media (max-width: 600px) {
 
-  /* Reduce spacing around the white box */
   .page-container {
     padding: 0 10px;
   }
@@ -145,8 +141,6 @@
     padding: 24px 20px;
     border-radius: 10px;
   }
-
-  /* Heading adjustments */
   .contact-header h1 {
     font-size: 22px;
     text-align: center;
@@ -158,31 +152,25 @@
     margin-bottom: 20px;
   }
 
-  /* Stack first + last name vertically */
   .name-row {
     flex-direction: column;
     gap: 12px;
   }
 
-  /* Inputs slightly smaller for mobile ergonomics */
+ 
   .form-input,
   .form-textarea {
     padding: 10px;
     font-size: 15px;
   }
-
-  /* Textarea height */
   .form-textarea {
     min-height: 100px;
   }
-
-  /* Full-width button with better tap target */
   .submit-btn {
     width: 100%;
     padding: 14px;
     font-size: 16px;
   }
-
   .story-content {
     display: flex;
     flex-direction: column;
@@ -190,23 +178,15 @@
     text-align: center;
     gap: 20px;
   }
-
-  /* TEXT FIRST */
   .story-text {
     order: 1;
   }
-
-  /* IMAGE SECOND */
   .story-image {
     order: 2;
   }
-
-
-
   .story-text h2 {
     font-size: 22px;
   }
-
   .story-text h3 {
     font-size: 14px;
     margin-bottom: 12px;
@@ -223,11 +203,6 @@
     max-width: 400px;
     border-radius: 10px;
   }
-
-}
-@media (max-width: 600px) {
-
-  /* Container becomes vertical */
   .team-container {
     display: flex;
     flex-direction: column;
@@ -237,23 +212,17 @@
     text-align: center;
     padding-bottom: 20px;
   }
-
-  /* Each team card stretches full width */
   .team-member,
   .team-card {
     width: 100%;
     max-width: 380px;
   }
-
-  /* Images scale nicely */
   .team-member img,
   .team-card img {
     width: 50%;
     height: auto;
     border-radius: 12px;
   }
-
-  /* Text spacing */
   .team-member h3,
   .team-card h3 {
     font-size: 18px;
@@ -266,3 +235,4 @@
     line-height: 1.5;
   }
 }
+
