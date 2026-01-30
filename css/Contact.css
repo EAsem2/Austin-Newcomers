@@ -145,8 +145,6 @@ body {
     .submit-btn:active {
       transform: translateY(1px);
     }
-
-/* MOBILE RESPONSIVE CONTACT FORM */
 @media (max-width: 600px) {
 
   .page-container {
@@ -188,4 +186,5 @@ body {
     font-size: 16px;
   }
 }
+
 
