@@ -6,7 +6,6 @@
   padding-bottom: 100px;
 }
 
-/* Title and subtext OUTSIDE the box */
 .form-title {
   font-size: 40px;
   font-weight: 700;
@@ -21,7 +20,6 @@
   margin-bottom: 30px;
 }
 
-/* Rounded box ONLY around the form */
 .form-box {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
@@ -57,7 +55,6 @@
   background: #fff;
 }
 
-/* Side-by-side rows */
 .form-row {
   display: flex;
   gap: 20px;
@@ -67,7 +64,6 @@
   flex: 1;
 }
 
-/* Submit button */
 .submit-btn {
   background-color: #1fad96;
   color: white;
@@ -126,20 +122,17 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-/* MOBILE RESPONSIVE LAYOUT */
 @media (max-width: 600px) {
 
   .add-resource-container {
     padding: 20px 15px;
   }
 
-  /* Make the form box breathe on small screens */
   .form-box {
     padding: 20px;
     border-radius: 12px;
   }
 
-  /* Reduce title spacing */
   .form-title {
     font-size: 24px;
     margin-bottom: 6px;
@@ -149,25 +142,20 @@
     font-size: 14px;
     margin-bottom: 20px;
   }
-
-  /* Stack side-by-side rows vertically */
   .form-row {
     flex-direction: column;
     gap: 16px;
   }
-
-  /* Inputs slightly smaller for mobile ergonomics */
   .resource-form input,
   .resource-form select,
   .resource-form textarea {
     padding: 10px;
     font-size: 15px;
   }
-
-  /* Button full width on mobile */
   .submit-btn {
     width: 100%;
     padding: 14px;
     font-size: 16px;
   }
 }
+
