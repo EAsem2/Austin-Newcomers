@@ -5,6 +5,15 @@ table {
     border-collapse: collapse; 
 	padding: 10px 100px 50px  80px;
 }
+
+main h1 { 
+    text-align: center; 
+    font-family: 'Quicksand', sans-serif; /* Note the lowercase 's' in Quicksand */
+    color: #333; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
 table thead{
 	font-weight: bold;
 	background-color: rgb(221, 246, 255);
@@ -32,4 +41,5 @@ th:first-child, td:first-child {
 
 th:only-child, td:only-child {
     width: 15%;
+
 }
