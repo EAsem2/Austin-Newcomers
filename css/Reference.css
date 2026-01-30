@@ -14,10 +14,11 @@ main h1 {
     margin-bottom: 20px; 
 }
 
-table thead{
-	font-family: 'Quicksand', sans-serif;
-	font-weight: bold;
-	background-color: rgb(221, 246, 255);
+
+table thead th {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    background-color: rgb(221, 246, 255);
 }
 
 th, td {
@@ -44,5 +45,6 @@ th:only-child, td:only-child {
     width: 15%;
 
 }
+
 
 
