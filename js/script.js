@@ -12,10 +12,8 @@ async function loadResources() {
   const res = await fetch("../js/Resources.json");
   const jsonResources = await res.json();
 
-  // Load user-submitted resources
   const userResources = JSON.parse(localStorage.getItem("userResources")) || [];
 
-  // Merge them
   allResources = [...jsonResources, ...userResources];
 
   renderResources();
@@ -32,15 +30,12 @@ function renderResources() {
 
     let matchesCategory = true;
 
-    // If "All" is selected → show everything
     if (selectedCategories.includes("All")) {
       matchesCategory = true;
     }
-    // If no categories selected → show everything
     else if (selectedCategories.length === 0) {
       matchesCategory = true;
     }
-    // Otherwise filter normally
     else {
       matchesCategory = selectedCategories.includes(r.category);
     }
@@ -98,11 +93,9 @@ filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     const category = btn.dataset.category;
 
-    // If "All" is clicked → reset everything
     if (category === "All") {
       selectedCategories = ["All"];
 
-      // Remove active from all buttons except All
       filterButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
@@ -110,11 +103,8 @@ filterButtons.forEach(btn => {
       return;
     }
 
-    // If any other category is clicked → remove "All"
     selectedCategories = selectedCategories.filter(c => c !== "All");
     document.querySelector(".all-btn").classList.remove("active");
-
-    // Toggle category
     btn.classList.toggle("active");
 
     if (selectedCategories.includes(category)) {
@@ -129,5 +119,6 @@ filterButtons.forEach(btn => {
 
 
 loadResources();
+
 
 
