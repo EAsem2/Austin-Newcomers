@@ -44,71 +44,100 @@
 <span></span>
 <span></span>
 </button>
-</header>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference Page</title>
+    <link rel="stylesheet" href="../css/Reference.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="../assets/logo.png" alt="Logo" class="logo">
+        </div>
+        <nav>
+            <div class="nav-item"><a href="../html/Home.html">Home</a></div>
+            <div class="nav-item dropdown">
+                <a href="../html/Resources.html" class="dropbtn">Resources</a>
+                <div class="dropdown-content">
+                    <a href="../html/AddResource.html">Add Resource</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="../html/AboutUs.html">About Us</a></div>
+            <div class="nav-item"><a href="../html/Reference.html">References</a></div>
+            <a href="../html/ContactUs.html" class="contact-btn">Contact Us</a>
+        </nav>
+        <button class="navicon" id="navicon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
 
     <main>
-        <h1> Reference Page </h1>
-         <table class="row">
-             <thead>
-                 <tr>
-                     <th>Topic</th>
-                     <th>Description</th>
-                 </tr>
-             </thead>
-             <tbody>
-                 <tr>
-                    <td>Student Copyright Checklists</td>
-                    <td> <a href="../html/Home.html">Mayte Camargo  </a> 
-                         <a href="../html/Home.html">Eden Asemlashe  </a> 
-                         <a href="../html/Home.html">Eduardo Dominguez  </a> 
-                    </td>
-                </tr>
-                <tr>
-                    <td> Work Log </td>
-                    <td> <a href="../css/H.styles.css"> Work Log </a> </td>
-                </tr>
-                <tr>
-                    <td> Website Development</td>
-                    <td> We integrated Google Fonts ( QuickSand & Poppins ). We did not use any prebuilt templates/themes, and built all templates/themes ourselves. </td>
-                </tr>
-             </tbody>
-         </table>
+        <h1 class="text-center mt-4">Reference Page</h1>
+        <p class="text-center text-muted mt-3">
+            Documentation for the Austin Newcomers Resource Hub.
+        </p>
 
+        <table class="row">
+            <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Example Topic</td>
+                    <td>This text in the second column will appear smaller due to our CSS rule.</td>
+                </tr>
+            </tbody>
+        </table>
 
+        <section class="container mt-5">
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="card p-3 h-100 ref-card">
+                        <h5 class="fw-semibold">Student Copyright Checklists</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li><a href="./2013110.pdf" target="_blank">Mayte C.</a></li>
+                            <li><a href="./2013111.pdf" target="_blank">Eden A.</a></li>
+                            <li><a href="./2013156.pdf" target="_blank">Eduardo D.</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3 h-100 ref-card">
+                        <h5 class="fw-semibold">Work Log</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li><a href="./plan-of-work-log.pdf" target="_blank">Work Log</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3 h-100 ref-card">
+                        <h5 class="fw-semibold">Framework Statement</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li>We integrated Google Fonts (Quicksand & Poppins). We did not use any prebuilt templates/themes, and built all templates/themes ourselves.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
- <!-- FOOTER SECTION -->
-<footer class="site-footer">
-  <div class="footer-columns">
+    <footer>
+        <div class="footer-bottom">
+            <p>Copyright © 2026 Welcome Austin’s Newcomers resource-hub/Webmaster Team. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-    <div class="footer-column">
-      <h3>Main Links</h3>
-      <ul>
-        <li><a href="../html/Home.html">Home Page</a></li>
-        <li><a href="../html/Resources.html">Resources</a></li>
-        <li><a href="../html/AddResource.html">Add Resources</a></li>
-        <li><a href="../html/AboutUs.html">About Us</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Contact Information</h3>
-      <ul>
-        <li><a href="../html/ContactUs.html">Form: Contact Us</a></li>
-        <li>Email: <a href="mailto:austin.newcomershub@gmail.com">austin.newcomershub@gmail.com</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>Copyright © 2026 Welcome Austin’s Newcomers resource-hub/Webmaster Team. All Rights Reserved.</p>
-  </div>
-</footer>
-
-<script src="../js/navi.js"></script>
+    <script src="../js/navi.js"></script>
 </body>
-
 </html>
 
 
