@@ -8,13 +8,14 @@ table {
 
 main h1 { 
     text-align: center; 
-    font-family: 'Quicksand', sans-serif; /* Note the lowercase 's' in Quicksand */
+    font-family: 'Quicksand', sans-serif; 
     color: #333; 
     margin-top: 20px; 
     margin-bottom: 20px; 
 }
 
 table thead{
+	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	background-color: rgb(221, 246, 255);
 }
@@ -43,4 +44,5 @@ th:only-child, td:only-child {
     width: 15%;
 
 }
+
 
