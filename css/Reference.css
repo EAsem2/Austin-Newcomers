@@ -22,6 +22,7 @@ table thead th {
 }
 
 th, td {
+	font-family: 'Quicksand', sans-serif;
     border: none; 
     padding: 10px;
     text-align: left;
