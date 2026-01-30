@@ -30,7 +30,6 @@
   background: #b71c1c;
 }
 
-/* Delete button on each card */
 .delete-btn {
   margin-top: 15px;
   background: #d32f2f;
@@ -46,3 +45,4 @@
 .delete-btn:hover {
   background: #b71c1c;
 }
+
