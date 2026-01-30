@@ -8,8 +8,8 @@ body {
 }
 .page-container {
     display: flex;
-    justify-content: center;   /* centers the form horizontally */
-    padding-top: 20px;           /* top and bottom spacing */
+    justify-content: center;  
+    padding-top: 20px;  
     padding-bottom: 40px;
     
 }
@@ -44,8 +44,8 @@ body {
         border-color: #0b0b0b 1px solid;
     }
     .contact-header h1 {
-        font-size: 100px;      /* biggest */
-        font-weight: 700;     /* bold */
+        font-size: 100px;     
+        font-weight: 700; 
         margin: 0;
         color: #0b0b0b;}
 
@@ -149,7 +149,6 @@ body {
 /* MOBILE RESPONSIVE CONTACT FORM */
 @media (max-width: 600px) {
 
-  /* Reduce spacing around the white box */
   .page-container {
     padding: 0 16px;
   }
@@ -159,7 +158,6 @@ body {
     border-radius: 10px;
   }
 
-  /* Heading adjustments */
   .contact-header h1 {
     font-size: 22px;
     text-align: center;
@@ -171,28 +169,23 @@ body {
     margin-bottom: 20px;
   }
 
-  /* Stack first + last name vertically */
   .name-row {
     flex-direction: column;
     gap: 12px;
   }
-
-  /* Inputs slightly smaller for mobile ergonomics */
   .form-input,
   .form-textarea {
     padding: 10px;
     font-size: 15px;
   }
 
-  /* Textarea height */
   .form-textarea {
     min-height: 100px;
   }
-
-  /* Full-width button with better tap target */
   .submit-btn {
     width: 100%;
     padding: 14px;
     font-size: 16px;
   }
 }
+
