@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let allResources = [];
 
-  // 1. LOAD RESOURCES FROM JSON + LOCALSTORAGE
+  // 1. LOAD RESOURCES
   async function loadResources() {
     try {
       const response = await fetch("js/Resources.json");
@@ -90,9 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (card) card.classList.toggle("flipped");
   });
 
-  // 7. START EVERYTHING
   loadResources();
 });
+
 
 
 
