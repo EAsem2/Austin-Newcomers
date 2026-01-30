@@ -1,0 +1,35 @@
+@charset "utf-8";
+table {
+    width: 90%;
+	margin: 30px auto;
+    border-collapse: collapse; 
+	padding: 10px 100px 50px  80px;
+}
+table thead{
+	font-weight: bold;
+	background-color: rgb(221, 246, 255);
+}
+
+th, td {
+    border: none; 
+    padding: 10px;
+    text-align: left;
+}
+
+/*Solid border between rows */
+tr {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.615); 
+}
+
+/*Changes background color when hovering over a row */
+tbody tr:hover {
+    background-color: lightgray; 
+    transition: 0.3s ease-in-out; 
+}
+th:first-child, td:first-child {
+    width: 13%; 
+}
+
+th:only-child, td:only-child {
+    width: 15%;
+}
