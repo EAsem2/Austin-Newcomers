@@ -124,6 +124,19 @@ table td:nth-child(2) {
     text-decoration: underline;
 }
 
+.ref-card {
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #dee2e6; 
+}
+
+.ref-card h5 {
+    font-family: 'Quicksand', sans-serif;
+    color: #2c3e50; /* Matching your h1 color */
+}
+
 
 
 
