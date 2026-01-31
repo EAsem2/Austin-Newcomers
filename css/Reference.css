@@ -1,113 +1,40 @@
 @charset "utf-8";
 
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif; /* Default font */
-    background-color: #f9f9f9;
-}
-
-main {
-    padding: 40px 20px;
-}
-
-
-main h1 {
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-top: 20px;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.row.g-4 {
+.card-container {
     display: flex;
     gap: 20px;
-}
-
-.col-md-4 {
-    flex: 1;
-    min-width: 300px;
-}
-
-.ref-card {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    height: 100%;
-    transition: transform 0.2s;
-}
-
-.ref-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
-
-.ref-card h5 {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: #333;
-    border-bottom: 2px solid #ddf6ff;
-    padding-bottom: 10px;
-}
-
-.list-unstyled {
-    list-style: none;
-    padding: 0;
-}
-
-.list-unstyled li {
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-}
-
-.list-unstyled a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.list-unstyled a:hover {
-    text-decoration: underline;
-}
-
-.ref-card {
-    width: 100%; 
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
-    border: 1px solid #dee2e6; 
-}
-
-.ref-card h5 {
-    font-family: 'Quicksand', sans-serif;
-    color: #2c3e50;
-}
-
-.col-md-6 {
-    Padding-left: 20px;
-    Padding-right: 20px;
-}
-
-.equal-row {
-    display: flex;
+    justify-content: center;
+    margin-top: 40px;
     flex-wrap: wrap;
 }
 
-.equal-row > [class*="col-"] {
-    display: flex;
+.info-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
 }
 
-.equal-row .ref-card {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+.info-card:hover,
+.info-card:active {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+}
+
+.info-card h3 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.info-card p {
+    color: #555;
+    font-size: 0.9rem;
 }
 
 
