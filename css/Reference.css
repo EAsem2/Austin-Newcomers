@@ -97,6 +97,18 @@ main h1 {
 }
 
 
+.equal-height {
+    display: flex;
+    align-items: stretch;
+}
+
+.equal-height > div {
+    display: flex;
+}
+
+.equal-height .ref-card {
+    height: 100%;
+}
 
 
 
