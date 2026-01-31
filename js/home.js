@@ -31,13 +31,35 @@ document.addEventListener("DOMContentLoaded", () => {
 function getSpotlightResources() {
   const now = new Date();
   const seed = `${now.getFullYear()}-${now.getMonth() + 1}`;
-  const base = hashString(seed) % allResources.length;
+  const rand = seededRandom(seed);
 
-  return [
-    allResources[base],
-    allResources[(base + 1) % allResources.length],
-    allResources[(base + 2) % allResources.length]
-  ];
+  // Group by category
+  const categories = {};
+  allResources.forEach(r => {
+    (categories[r.category] ||= []).push(r);
+  });
+
+  const catList = Object.keys(categories);
+
+  // Shuffle categories using seeded random
+  catList.sort(() => rand() - 0.5);
+
+  // Pick first 3 categories
+  const chosenCats = catList.slice(0, 3);
+
+  // Pick 1 random resource from each category
+  return chosenCats.map(cat => {
+    const items = categories[cat];
+    return items[Math.floor(rand() * items.length)];
+  });
+}
+  function seededRandom(seed) {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) h = Math.imul(31, h) + seed.charCodeAt(i);
+  return function () {
+    h = Math.imul(48271, h) % 2147483647;
+    return (h & 2147483647) / 2147483647;
+  };
 }
 
   // 3. RENDER SPOTLIGHT CARDS
@@ -79,22 +101,19 @@ function getSpotlightResources() {
   }
 
   // 4. CHECK IF 2 WEEKS HAVE PASSED
-  function shouldRefreshSpotlights() {
+function shouldRefreshSpotlights() {
   const last = localStorage.getItem("spotlightMonth");
   const now = new Date();
-  const currentMonth = `${now.getFullYear()}-${now.getMonth() + 1}`;
-
-  return last !== currentMonth;
+  const current = `${now.getFullYear()}-${now.getMonth() + 1}`;
+  return last !== current;
 }
 
   // 5. UPDATE SPOTLIGHTS IF NEEDED
-  function updateSpotlightsIfNeeded() {
+function updateSpotlightsIfNeeded() {
   if (shouldRefreshSpotlights()) {
     const now = new Date();
-    const currentMonth = `${now.getFullYear()}-${now.getMonth() + 1}`;
-    localStorage.setItem("spotlightMonth", currentMonth);
+    localStorage.setItem("spotlightMonth", `${now.getFullYear()}-${now.getMonth() + 1}`);
   }
-
   renderSpotlights();
 }
 
@@ -106,6 +125,7 @@ function getSpotlightResources() {
 
   loadResources();
 });
+
 
 
 
