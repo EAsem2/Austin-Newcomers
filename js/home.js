@@ -19,10 +19,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 2. PICK 3 RANDOM RESOURCES
-  function getSpotlightResources() {
-    const shuffled = [...allResources].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 3);
+  function hashString(str) {
+  let h = 0;
+  for (let i = 0; i < str.length; i++) {
+    h = (h << 5) - h + str.charCodeAt(i);
+    h |= 0;
   }
+  return Math.abs(h);
+}
+
+function getSpotlightResources() {
+  const now = new Date();
+  const seed = `${now.getFullYear()}-${now.getMonth() + 1}`;
+  const base = hashString(seed) % allResources.length;
+
+  return [
+    allResources[base],
+    allResources[(base + 1) % allResources.length],
+    allResources[(base + 2) % allResources.length]
+  ];
+}
 
   // 3. RENDER SPOTLIGHT CARDS
   function renderSpotlights() {
@@ -64,25 +80,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 4. CHECK IF 2 WEEKS HAVE PASSED
   function shouldRefreshSpotlights() {
-    const last = localStorage.getItem("spotlightLastRefresh");
-    if (!last) return true;
+  const last = localStorage.getItem("spotlightMonth");
+  const now = new Date();
+  const currentMonth = `${now.getFullYear()}-${now.getMonth() + 1}`;
 
-    const now = new Date();
-    const then = new Date(last);
-    const diffDays = (now - then) / (1000 * 60 * 60 * 24);
-
-    return diffDays >= 14;
-  }
+  return last !== currentMonth;
+}
 
   // 5. UPDATE SPOTLIGHTS IF NEEDED
   function updateSpotlightsIfNeeded() {
-    if (shouldRefreshSpotlights()) {
-      renderSpotlights();
-      localStorage.setItem("spotlightLastRefresh", new Date().toISOString());
-    } else {
-      renderSpotlights();
-    }
+  if (shouldRefreshSpotlights()) {
+    const now = new Date();
+    const currentMonth = `${now.getFullYear()}-${now.getMonth() + 1}`;
+    localStorage.setItem("spotlightMonth", currentMonth);
   }
+
+  renderSpotlights();
+}
 
   // 6. ENABLE FLIP ON CLICK
   document.addEventListener("click", (e) => {
@@ -92,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadResources();
 });
+
 
 
 
