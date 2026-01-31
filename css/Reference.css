@@ -46,6 +46,12 @@ body{
     font-family: 'Poppins', sans-serif; 
 }
 
+.info-card p a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+
 
 
 
