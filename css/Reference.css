@@ -7,13 +7,16 @@ html, body {
 body{
   background-color: #fbfaf6;
 }
+main{
+  padding-bottom:20px;
+    }
 .card-container {
     display: flex;
     gap: 20px;
     justify-content: center;
     margin-top: 40px;
     flex-wrap: wrap;
-  Padding-bottom:20px;
+  Padding-left:5px;
 }
 
 .info-card {
@@ -56,6 +59,7 @@ body{
     font-weight: 400;
     text-decoration: none; 
 }
+
 
 
 
