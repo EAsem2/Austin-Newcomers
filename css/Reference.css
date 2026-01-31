@@ -1,6 +1,10 @@
 @charset "utf-8";
-body {
+html, body {
   margin: 0;
+  padding: 0;
+}
+
+body{
   background-color: #fbfaf6;
 }
 .card-container {
@@ -39,6 +43,7 @@ body {
     color: #555;
     font-size: 0.9rem;
 }
+
 
 
 
