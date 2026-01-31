@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let allResources = [];
 
-  // 1. LOAD RESOURCES
+  // 1. LOAD RESOURCES FROM JSON + LOCALSTORAGE
   async function loadResources() {
     try {
-      const response = await fetch("js/Resources.json");
+      const response = await fetch("../js/Resources.json");
       const jsonData = await response.json();
 
       const userData = JSON.parse(localStorage.getItem("userResources")) || [];
@@ -19,48 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 2. PICK 3 RANDOM RESOURCES
-  function hashString(str) {
-  let h = 0;
-  for (let i = 0; i < str.length; i++) {
-    h = (h << 5) - h + str.charCodeAt(i);
-    h |= 0;
+  function getSpotlightResources() {
+    const shuffled = [...allResources].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 3);
   }
-  return Math.abs(h);
-}
-
-function getSpotlightResources() {
-  const now = new Date();
-  const seed = `${now.getFullYear()}-${now.getMonth() + 1}`;
-  const rand = seededRandom(seed);
-
-  // Group by category
-  const categories = {};
-  allResources.forEach(r => {
-    (categories[r.category] ||= []).push(r);
-  });
-
-  const catList = Object.keys(categories);
-
-  // Shuffle categories using seeded random
-  catList.sort(() => rand() - 0.5);
-
-  // Pick first 3 categories
-  const chosenCats = catList.slice(0, 3);
-
-  // Pick 1 random resource from each category
-  return chosenCats.map(cat => {
-    const items = categories[cat];
-    return items[Math.floor(rand() * items.length)];
-  });
-}
-  function seededRandom(seed) {
-  let h = 0;
-  for (let i = 0; i < seed.length; i++) h = Math.imul(31, h) + seed.charCodeAt(i);
-  return function () {
-    h = Math.imul(48271, h) % 2147483647;
-    return (h & 2147483647) / 2147483647;
-  };
-}
 
   // 3. RENDER SPOTLIGHT CARDS
   function renderSpotlights() {
@@ -77,11 +39,11 @@ function getSpotlightResources() {
   <p class="spot-desc">${r.description}</p>
   <hr>
   <div class="spot-info">
-    <img src="Images/phone.png" class="icon">
+    <img src="../Images/pin.png" class="icon">
     <p>${r.address}</p>
   </div>
   <div class="spot-info">
-    <img src="Images/pin.png" class="icon">
+    <img src="../Images/phone.png" class="icon">
     <p>${r.contact}</p>
   </div>
 </div>
@@ -101,21 +63,26 @@ function getSpotlightResources() {
   }
 
   // 4. CHECK IF 2 WEEKS HAVE PASSED
-function shouldRefreshSpotlights() {
-  const last = localStorage.getItem("spotlightMonth");
-  const now = new Date();
-  const current = `${now.getFullYear()}-${now.getMonth() + 1}`;
-  return last !== current;
-}
+  function shouldRefreshSpotlights() {
+    const last = localStorage.getItem("spotlightLastRefresh");
+    if (!last) return true;
+
+    const now = new Date();
+    const then = new Date(last);
+    const diffDays = (now - then) / (1000 * 60 * 60 * 24);
+
+    return diffDays >= 14;
+  }
 
   // 5. UPDATE SPOTLIGHTS IF NEEDED
-function updateSpotlightsIfNeeded() {
-  if (shouldRefreshSpotlights()) {
-    const now = new Date();
-    localStorage.setItem("spotlightMonth", `${now.getFullYear()}-${now.getMonth() + 1}`);
+  function updateSpotlightsIfNeeded() {
+    if (shouldRefreshSpotlights()) {
+      renderSpotlights();
+      localStorage.setItem("spotlightLastRefresh", new Date().toISOString());
+    } else {
+      renderSpotlights();
+    }
   }
-  renderSpotlights();
-}
 
   // 6. ENABLE FLIP ON CLICK
   document.addEventListener("click", (e) => {
@@ -123,16 +90,6 @@ function updateSpotlightsIfNeeded() {
     if (card) card.classList.toggle("flipped");
   });
 
+  // 7. START EVERYTHING
   loadResources();
 });
-
-
-
-
-
-
-
-
-
-
-
