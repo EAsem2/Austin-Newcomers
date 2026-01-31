@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. LOAD RESOURCES FROM JSON + LOCALSTORAGE
   async function loadResources() {
     try {
-      const response = await fetch("../js/Resources.json");
+      const response = await fetch("js/Resources.json");
       const jsonData = await response.json();
 
       const userData = JSON.parse(localStorage.getItem("userResources")) || [];
@@ -93,3 +93,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // 7. START EVERYTHING
   loadResources();
 });
+
