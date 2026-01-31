@@ -28,7 +28,6 @@ main h1 {
 
 .row.g-4 {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -96,18 +95,19 @@ main h1 {
     Padding-right: 20px;
 }
 
-
-.equal-height {
+.equal-row {
     display: flex;
-    align-items: stretch;
+    flex-wrap: wrap;
 }
 
-.equal-height > div {
+.equal-row > [class*="col-"] {
     display: flex;
 }
 
-.equal-height .ref-card {
-    height: 100%;
+.equal-row .ref-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 
