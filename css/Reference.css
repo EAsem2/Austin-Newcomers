@@ -50,6 +50,13 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+.info-card a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-decoration: none; 
+}
+
+
 
 
 
