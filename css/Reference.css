@@ -93,6 +93,7 @@ main h1 {
 .col-md-6 {
     Padding-left: 20px;
     Padding-right: 20px;
+    Width:100px;
 }
 
 .equal-row {
@@ -109,6 +110,7 @@ main h1 {
     display: flex;
     flex-direction: column;
 }
+
 
 
 
