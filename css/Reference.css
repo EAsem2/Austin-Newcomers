@@ -3,9 +3,6 @@ body {
   margin: 0;
   background-color: #fbfaf6;
 }
-.margin{
-    padding-bottom:25px;
-}
 .card-container {
     display: flex;
     gap: 20px;
@@ -42,6 +39,7 @@ body {
     color: #555;
     font-size: 0.9rem;
 }
+
 
 
 
