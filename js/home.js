@@ -31,34 +31,26 @@ document.addEventListener("DOMContentLoaded", () => {
 function getSpotlightResources() {
   const now = new Date();
   const seed = `${now.getFullYear()}-${now.getMonth() + 1}`;
-  const random = seededRandom(seed);
+  const rand = seededRandom(seed);
 
-  // Group resources by category
+  // Group by category
   const categories = {};
   allResources.forEach(r => {
-    if (!categories[r.category]) categories[r.category] = [];
-    categories[r.category].push(r);
+    (categories[r.category] ||= []).push(r);
   });
 
-  const categoryNames = Object.keys(categories);
+  const catList = Object.keys(categories);
 
-  // Need at least 3 categories
-  if (categoryNames.length < 3) {
-    console.error("Not enough categories for 3 spotlights");
-    return [];
-  }
-
-  // Shuffle categories deterministically
-  const shuffledCats = shuffleWithSeed(categoryNames, random);
+  // Shuffle categories using seeded random
+  catList.sort(() => rand() - 0.5);
 
   // Pick first 3 categories
-  const chosenCats = shuffledCats.slice(0, 3);
+  const chosenCats = catList.slice(0, 3);
 
   // Pick 1 random resource from each category
   return chosenCats.map(cat => {
     const items = categories[cat];
-    const index = Math.floor(random() * items.length);
-    return items[index];
+    return items[Math.floor(rand() * items.length)];
   });
 }
   function seededRandom(seed) {
@@ -133,6 +125,7 @@ function updateSpotlightsIfNeeded() {
 
   loadResources();
 });
+
 
 
 
