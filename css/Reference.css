@@ -37,12 +37,15 @@ body{
     margin: 0 0 10px 0;
     font-weight: 600;
     color: #2c3e50;
+    font-family: 'Quicksand', sans-serif; 
 }
 
 .info-card p {
     color: #555;
     font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif; 
 }
+
 
 
 
