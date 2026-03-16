@@ -80,8 +80,18 @@ body {
 .hero-right img {
   width: 300px;
   height: auto;
-  padding-right: 20pxs;
+  padding-right: 20px;
 }
+
+
+hr {
+    border: 0;
+    height: 2px;
+    background: #666a86; /* Matches your button color */
+    margin: 40px auto;
+    width: 90%;
+}
+
 
 /* COMMUNITY SPOTLIGHTS SECTION */
 .spotlights {
