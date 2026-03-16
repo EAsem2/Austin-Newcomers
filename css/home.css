@@ -325,6 +325,8 @@ hr {
   }
   .spotlights {
     padding: 40px 20px;
+    margin-top: 40px; /* This creates the gap you're looking for */
+    text-align: center;
   }
 
   .spotlights-title {
