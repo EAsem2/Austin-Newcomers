@@ -61,17 +61,17 @@ function createCardHTML(r) {
       <hr class="resource-divider" />
 
       <div class="spot-info">
-        <img src="../images/gps.png" class="icon">
+        <img src="../Images/gps.png" class="icon">
         <p>${r.address}</p>
       </div>
 
       <div class="spot-info">
-        <img src="../images/phone.png" class="icon">
+        <img src="../Images/phone.png" class="icon">
         <p>${r.contact}</p>
       </div>
 
       <div class="spot-info">
-        <img src="../images/clock.png" class="icon">
+        <img src="../Images/clock.png" class="icon">
         <p>${r.hours}</p>
       </div>
     </article>
