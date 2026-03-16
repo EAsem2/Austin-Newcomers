@@ -83,11 +83,10 @@ body {
   padding-right: 20px;
 }
 
-G=
 hr {
     border: 0;
     height: 2px;
-    background: #666a86; /* Matches your button color */
+    background: #bdbfcc; /* Matches your button color */
     margin: 37px auto;
     width: 90%;
 }
