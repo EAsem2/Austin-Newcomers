@@ -107,38 +107,75 @@ body{
   color: #fff;
 }
 
-.resources-grid {
+.resource-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  padding: 0 24px 24px 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 10px;
 }
 
-/* Cards */
+/* Compact card style */
 .resource-card {
-  padding: 8px 10px; /* smaller padding */
-  border: 2px solid #000;
-  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid #b2b3bf;
+  border-radius: 21px;
   background-color: white;
-  box-shadow: #000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  font-size: 9.5px;
+  line-height: 1.3;
 }
 
- .resource-name { margin-bottom: 2px; } .provider { margin-bottom: 4px; }
+.resource-name {
+  margin-top: 0;      /* removes space above */
+  margin-bottom: 5px; /* controls space below */
+  padding: 0;         /* ensures no extra padding */
+}
+/* Title */
+.resource-name a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13.4px;
+}
+.resource-name a:hover {
+  text-decoration: underline;
+  color: #93aeff;
+}
 
+
+/* Text spacing */
+.resource-card p {
+  margin: 4px 0;
+}
+
+/* Icons row */
 .spot-info {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.spot-info p {
+  font-size: 9.5px;
 }
 
-/* ICONS */
+/* Icons */
 .icon {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }
 
-
+/* Responsive */
+@media (max-width: 900px) {
+  .resource-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 600px) {
 
   .resource-header {
@@ -186,48 +223,17 @@ body{
     padding: 8px 14px;
     font-size: 14px;
   }
-  .resources-grid {
-    grid-template-columns: 1fr;
-    padding: 0 16px 24px 16px;
-    gap: 20px;
-  }
+  
+}
 
-  .resource-card {
-    padding: 10px;
-    border-radius: 12px;
-  }
-
-  .resource-name {
-    font-size: 18px;
-  }
-
-  .provider a {
-    font-size: 15px;
-  }
-
-  .spot-info {
-    gap: 5px;
-  }
-
-  .icon {
-    width: 16px;
-    height: 16px;
-  }
-  .resource-card {
-    max-width: 320px;
-    margin: 0 auto; 
-  }
-  .resource-card {
-    padding: 10px;
-  }
-
-  .resource-card p,
-  .resource-card a {
-    font-size: 12px;
-  }
-
-  .resource-name {
-    font-size: 17px;
+@media (max-width: 900px) {
+  .resource-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+@media (max-width: 600px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
