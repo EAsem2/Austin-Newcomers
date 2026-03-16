@@ -83,12 +83,12 @@ body {
   padding-right: 20px;
 }
 
-
+G=
 hr {
     border: 0;
     height: 2px;
     background: #666a86; /* Matches your button color */
-    margin: 60px auto;
+    margin: 37px auto;
     width: 90%;
 }
 
@@ -104,11 +104,14 @@ hr {
   background-color: #ffdfe4;
   padding: 8px 20px;
   border-radius: 25px;
+  margin-top:25px;
+  margin-bottom: 20px;
   font-family: 'Avenir', sans-serif;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 0px;
   color: #fea8b4;
+  
 }
 
 .spotlights-title {
