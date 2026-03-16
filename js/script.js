@@ -9,7 +9,7 @@ let currentSearch = "";
 // Load JSON
 async function loadResources() {
   // Load original JSON
-  const res = await fetch("./js/resources.json");
+  const res = await fetch("../js/resources.json");
   const jsonResources = await res.json();
 
   const userResources = JSON.parse(localStorage.getItem("userResources")) || [];
@@ -61,17 +61,17 @@ function createCardHTML(r) {
       <hr class="resource-divider" />
 
       <div class="spot-info">
-        <img src="../Images/gps.png" class="icon">
+        <img src="../images/gps.png" class="icon">
         <p>${r.address}</p>
       </div>
 
       <div class="spot-info">
-        <img src="../Images/phone.png" class="icon">
+        <img src="../images/phone.png" class="icon">
         <p>${r.contact}</p>
       </div>
 
       <div class="spot-info">
-        <img src="../Images/clock.png" class="icon">
+        <img src="../images/clock.png" class="icon">
         <p>${r.hours}</p>
       </div>
     </article>
