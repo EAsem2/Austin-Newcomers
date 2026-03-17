@@ -2,13 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let allResources = [];
 
-  async function loadResources() {
-    const response = await fetch("js/Resources.json");
-    const jsonData = await response.json();
-    const userData = JSON.parse(localStorage.getItem("userResources")) || [];
-    allResources = [...jsonData, ...userData];
-    updateSpotlights();
-  }
+
+    
+async function loadResources() {
+  const res = await fetch("../js/Resources.json"); 
+  const jsonResources = await res.json();
+
+  const userResources = JSON.parse(localStorage.getItem("userResources")) || [];
+
+  allResources = [...jsonResources, ...userResources];
+updateSpotlights();
+}
 
   // Pick 3 resources from different categories
   function pickSpotlights() {
