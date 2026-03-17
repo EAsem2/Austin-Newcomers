@@ -1,119 +1,87 @@
-const resourcesGrid = document.getElementById("resourcesGrid");
-const searchInput = document.getElementById("searchInput");
-const filterButtons = document.querySelectorAll(".filter-btn");
+document.addEventListener("DOMContentLoaded", () => {
 
-let allResources = [];
-let selectedCategories = [];
-let currentSearch = "";
+  let allResources = [];
 
-// Load JSON
-async function loadResources() {
-  const res = await fetch("../js/Resources.json"); 
-  const jsonResources = await res.json();
+  async function loadResources() {
+    const response = await fetch("js/Resources.json");
+    const jsonData = await response.json();
+    const userData = JSON.parse(localStorage.getItem("userResources")) || [];
+    allResources = [...jsonData, ...userData];
+    updateSpotlights();
+  }
 
-  const userResources = JSON.parse(localStorage.getItem("userResources")) || [];
+  // Pick 3 resources from different categories
+  function pickSpotlights() {
+    const categories = {};
+    const unique = [];
 
-  allResources = [...jsonResources, ...userResources];
-
-  renderResources();
-}
-
-
-// Render cards
-function renderResources() {
-  const filtered = allResources.filter(r => {
-    const matchesSearch =
-      r.name.toLowerCase().includes(currentSearch) ||
-      r.description.toLowerCase().includes(currentSearch) ||
-      r.main_services.toLowerCase().includes(currentSearch);
-
-    let matchesCategory = true;
-
-    if (selectedCategories.includes("All")) {
-      matchesCategory = true;
-    }
-    else if (selectedCategories.length === 0) {
-      matchesCategory = true;
-    }
-    else {
-      matchesCategory = selectedCategories.includes(r.category);
+    for (const r of allResources) {
+      if (!categories[r.category]) {
+        categories[r.category] = true;
+        unique.push(r);
+      }
+      if (unique.length === 3) break;
     }
 
+    // If not enough unique categories, fallback to random
+    while (unique.length < 3) {
+      const r = allResources[Math.floor(Math.random() * allResources.length)];
+      if (!unique.includes(r)) unique.push(r);
+    }
 
-    return matchesSearch && matchesCategory;
-  });
+    return unique;
+  }
 
-  resourcesGrid.innerHTML = filtered.map(createCardHTML).join("");
-}
+  function renderSpotlights(spotlights) {
+    const container = document.getElementById("spotlightsContainer");
+    container.innerHTML = spotlights.map(r => `
+      <div class="spot-card">
+        <div class="spot-card-inner">
 
-// Create card HTML
-function createCardHTML(r) {
-  return `
-    <article class="resource-card">
-      <h2 class="resource-name">
-        <a href="${r.website}" target="_blank">${r.name}</a>
-      </h2>
-      <p><strong></strong> ${r.description}</p>
-      <p><strong>Main services:</strong> ${r.main_services}</p>
-      <p><strong>Cost:</strong> ${r.cost}</p>
+          <div class="spot-card-front">
+            <div class="tag">${r.category}</div>
+            <h4 class="spot-name">${r.name}</h4>
+            <p class="spot-desc">${r.description}</p>
+            <hr>
+            <div class="spot-info"><img src="Images/gps.png" class="icon"><p>${r.address}</p></div>
+            <div class="spot-info"><img src="Images/phone.png" class="icon"><p>${r.contact}</p></div>
+          </div>
 
-      <hr class="resource-divider" />
+          <div class="spot-card-back">
+            <h4>More Details</h4>
+            <p><strong>Provider:</strong> <a href="${r.website}" target="_blank">${r.provider}</a></p>
+            <p><strong>Main Services:</strong> ${r.main_services}</p>
+            <p><strong>Cost:</strong> ${r.cost}</p>
+            <p><strong>Hours:</strong> ${r.hours}</p>
+          </div>
 
-      <div class="spot-info">
-        <img src="../Images/gps.png" class="icon">
-        <p>${r.address}</p>
+        </div>
       </div>
+    `).join("");
+  }
 
-      <div class="spot-info">
-        <img src="../Images/phone.png" class="icon">
-        <p>${r.contact}</p>
-      </div>
+  function updateSpotlights() {
+    const saved = JSON.parse(localStorage.getItem("spotlights"));
+    const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 
-      <div class="spot-info">
-        <img src="../Images/clock.png" class="icon">
-        <p>${r.hours}</p>
-      </div>
-    </article>
-  `;
-}
-
-// Search input
-searchInput.addEventListener("input", e => {
-  currentSearch = e.target.value.toLowerCase();
-  renderResources();
-});
-
-// Multi-select categories
-filterButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const category = btn.dataset.category;
-
-    if (category === "All") {
-      selectedCategories = ["All"];
-
-      filterButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      renderResources();
-      return;
-    }
-
-    selectedCategories = selectedCategories.filter(c => c !== "All");
-    document.querySelector(".all-btn").classList.remove("active");
-    btn.classList.toggle("active");
-
-    if (selectedCategories.includes(category)) {
-      selectedCategories = selectedCategories.filter(c => c !== category);
+    if (!saved || saved.date !== today) {
+      // Check if 30 days passed
+      if (!saved || (new Date(today) - new Date(saved.date)) / (1000*60*60*24) >= 30) {
+        const newSpots = pickSpotlights();
+        localStorage.setItem("spotlights", JSON.stringify({ date: today, items: newSpots }));
+        renderSpotlights(newSpots);
+      } else {
+        renderSpotlights(saved.items);
+      }
     } else {
-      selectedCategories.push(category);
+      renderSpotlights(saved.items);
     }
+  }
 
-    renderResources();
+  document.addEventListener("click", (e) => {
+    const card = e.target.closest(".spot-card");
+    if (card) card.classList.toggle("flipped");
   });
+
+  loadResources();
 });
-
-
-loadResources();
-
-
-
