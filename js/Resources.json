@@ -897,8 +897,8 @@
     "hours": "Mon–Fri 8 AM–5 PM",
     "online_or_in_person": "Both",
     "category": "Inclusivity"
-  },
-  {
+  },{
+
     "name": "AISD Multilingual & Parent Support Services",
     "provider": "Austin Independent School District",
     "description": "Helps families enroll in school, supports English learners, and assists with school integration.",
@@ -910,7 +910,7 @@
     "address": "District-wide (Austin, TX)",
     "hours": "Mon–Fri (school hours)",
     "online_or_in_person": "Both",
-    "category": "Education"
+    "category": "Education – Kids"
   },
   {
     "name": "El Buen Samaritano Education Services",
@@ -924,7 +924,7 @@
     "address": "7000 Woodhue Dr, Austin, TX 78745",
     "hours": "Mon–Fri 9 AM–5 PM",
     "online_or_in_person": "Both",
-    "category": "Education"
+    "category": "Education – Kids"
   },
   {
     "name": "Communities In Schools (CIS)",
@@ -938,7 +938,7 @@
     "address": "3000 S IH-35 Suite 200, Austin, TX 78704",
     "hours": "Mon–Fri 8 AM–5 PM",
     "online_or_in_person": "In person",
-    "category": "Education"
+    "category": "Education – Kids"
   },
   {
     "name": "English @ Work & Family Pathways",
@@ -952,7 +952,7 @@
     "address": "835 N Pleasant Valley Rd, Austin, TX 78702",
     "hours": "Mon–Fri 9 AM–5 PM",
     "online_or_in_person": "Both",
-    "category": "Education"
+    "category": "Education – Kids"
   },
   {
     "name": "Boys & Girls Clubs – After-School Programs",
@@ -966,7 +966,7 @@
     "address": "Multiple Austin locations",
     "hours": "After school until early evening",
     "online_or_in_person": "In person",
-    "category": "Education"
+    "category": "Education – Kids"
   },
   {
     "name": "The Excel Center (Adult High School)",
@@ -980,7 +980,7 @@
     "address": "1015 Norwood Park Blvd, Austin, TX 78753",
     "hours": "Mon–Fri 8 AM–5 PM",
     "online_or_in_person": "In person",
-    "category": "Education"
+    "category": "Education – Adults"
   },
   {
     "name": "Adult Education & Career Pathways",
@@ -994,7 +994,7 @@
     "address": "835 N Pleasant Valley Rd, Austin, TX 78702",
     "hours": "Mon–Fri 9 AM–5 PM",
     "online_or_in_person": "Both",
-    "category": "Education "
+    "category": "Education – Adults"
   },
   {
     "name": "Workforce Solutions Career Centers",
@@ -1008,7 +1008,7 @@
     "address": "9001 N IH-35 Suite 110, Austin, TX 78753",
     "hours": "Mon–Fri 8 AM–5 PM",
     "online_or_in_person": "Both",
-    "category": "Education"
+    "category": "Education – Adults"
   },
   {
     "name": "ACC Adult Education",
@@ -1016,13 +1016,13 @@
     "description": "Offers free adult education classes including GED prep, English classes, career pathways, and college-readiness support.",
     "main_services": "GED prep, adult basic education, ESL classes, career training pathways, college application help",
     "cost": "Free for most programs",
-    "next_steps": "Contact or go to the nearest location as spots are limited ",
+    "next_steps": "Contact or go to the nearest location as spots are limited",
     "website": "https://adulted.austincc.edu/",
     "contact": "512-223-5123",
     "address": "Multiple ACC campuses",
     "hours": "Mon–Fri 8 AM–5 PM",
     "online_or_in_person": "Both",
-    "category": "Education"
+    "category": "Education – Adults"
   },
   {
     "name": "AVANCE Adult Education",
@@ -1036,7 +1036,7 @@
     "address": "4900 Gonzales St, Austin, TX 78702",
     "hours": "Mon–Fri 9 AM–5 PM",
     "online_or_in_person": "Both",
-    "category": "Education"
+    "category": "Education – Adults"
   },
   {
     "name": "I Belong in Austin",
@@ -1289,6 +1289,131 @@
     "hours": "Mon–Fri 7:30 AM–6 PM",
     "online_or_in_person": "In person",
     "category": "Life Skills"
-  }
-]
+  },
+  {
+  "name": "Austin Tenants Council – Housing Assistance",
+  "provider": "Austin Tenants Council",
+  "description": "Provides rental assistance guidance, tenant rights education, and help resolving housing issues.",
+  "main_services": "Rental assistance referrals, fair housing counseling, tenant-landlord mediation",
+  "cost": "Free",
+  "next_steps": "Call or visit the website to request assistance",
+  "website": "https://www.housing-rights.org/",
+  "contact": "512-474-7006",
+  "address": "1640-B E 2nd St, Austin, TX 78702",
+  "hours": "Mon–Fri 9 AM–4 PM",
+  "online_or_in_person": "Both",
+  "category": "Housing Assistance"
+},
+{
+  "name": "Foundation Communities – Affordable Housing",
+  "provider": "Foundation Communities",
+  "description": "Offers affordable apartments and supportive services for families and individuals.",
+  "main_services": "Affordable housing, financial coaching, health coverage enrollment",
+  "cost": "Low-cost (income-based)",
+  "next_steps": "Check availability online or call for openings",
+  "website": "https://foundcom.org/housing/",
+  "contact": "512-610-7392",
+  "address": "Multiple Austin locations",
+  "hours": "Mon–Fri 9 AM–5 PM",
+  "online_or_in_person": "Both",
+  "category": "Housing Assistance"
+},
+{
+  "name": "Austin Apartment Finders",
+  "provider": "Austin Apartment Finders",
+  "description": "Helps individuals and families locate apartments based on budget, location, and needs.",
+  "main_services": "Apartment locating, rental search assistance, neighborhood guidance",
+  "cost": "Free",
+  "next_steps": "Call or submit an online request",
+  "website": "https://www.austinapartments.com/",
+  "contact": "512-258-5200",
+  "address": "11011 Research Blvd #200, Austin, TX 78759",
+  "hours": "Mon–Fri 9 AM–6 PM, Sat 10 AM–5 PM",
+  "online_or_in_person": "Both",
+  "category": "Housing Assistance"
+},
+{
+  "name": "SAFE Alliance – Emergency Shelter",
+  "provider": "SAFE Alliance",
+  "description": "Provides emergency shelter and support for survivors of domestic violence, sexual assault, and trafficking.",
+  "main_services": "Women,Emergency shelter, crisis counseling, safety planning, advocacy",
+  "cost": "Free",
+  "next_steps": "Call the hotline for immediate placement",
+  "website": "https://www.safeaustin.org/",
+  "contact": "24/7 Hotline: 512-267-7233",
+  "address": "Confidential location (Austin, TX)",
+  "hours": "24/7",
+  "online_or_in_person": "In person",
+  "category": "Shelters"
+},
+{
+  "name": "The Salvation Army – Austin Shelter for Families",
+  "provider": "The Salvation Army Austin",
+  "description": "Provides emergency shelter and support services for families experiencing homelessness.",
+  "main_services": "Famelies, Emergency shelter, meals, case management, housing navigation",
+  "cost": "Free",
+  "next_steps": "Call or visit to check availability",
+  "website": "https://salvationarmyaustin.org/",
+  "contact": "512-476-1111",
+  "address": "4523 Tannehill Ln, Austin, TX 78721",
+  "hours": "24/7",
+  "online_or_in_person": "In person",
+  "category": "Shelters"
+},
+{
+  "name": "LifeWorks – Youth Shelter",
+  "provider": "LifeWorks Austin",
+  "description": "Provides emergency shelter and transitional housing for youth and young adults.",
+  "main_services": "Youth shelter, counseling, case management, transitional living",
+  "cost": "Free",
+  "next_steps": "Call or walk in for intake",
+  "website": "https://www.lifeworksaustin.org/",
+  "contact": "512-735-2100",
+  "address": "3700 S 1st St, Austin, TX 78704",
+  "hours": "24/7",
+  "online_or_in_person": "In person",
+  "category": "Shelters"
+},
+{
+  "name": "Integral Care – Mental Health Services",
+  "provider": "Integral Care",
+  "description": "Provides mental health support, crisis services, counseling, and psychiatric care for adults and youth.",
+  "main_services": "Counseling, crisis support, psychiatric services, case management",
+  "cost": "Free or low-cost (sliding scale)",
+  "next_steps": "Call the 24/7 helpline or visit a walk-in clinic",
+  "website": "https://www.integralcare.org/",
+  "contact": "24/7 Helpline: 512-472-4357",
+  "address": "Multiple Austin locations",
+  "hours": "Varies by location",
+  "online_or_in_person": "Both",
+  "category": "Mental Health Aid"
+},
+{
+  "name": "NAMI Central Texas",
+  "provider": "National Alliance on Mental Illness – Central Texas",
+  "description": "Offers free mental health education, support groups, and resources for individuals and families.",
+  "main_services": "Support groups, mental health classes, family support, resource navigation",
+  "cost": "Free",
+  "next_steps": "Register online for classes or groups",
+  "website": "https://namicentraltx.org/",
+  "contact": "512-420-9810",
+  "address": "4110 Guadalupe St Bldg 639, Austin, TX 78751",
+  "hours": "Mon–Fri 9 AM–5 PM",
+  "online_or_in_person": "Both",
+  "category": "Mental Health Aid"
+},
+{
+  "name": "Austin Travis County Mental Health Crisis Center",
+  "provider": "Integral Care",
+  "description": "Provides 24/7 crisis intervention, mental health assessments, and stabilization services.",
+  "main_services": "Crisis intervention, mental health evaluation, short-term stabilization",
+  "cost": "Free",
+  "next_steps": "Call or walk in for immediate help",
+  "website": "https://www.integralcare.org/services/crisis-services/",
+  "contact": "512-472-4357",
+  "address": "1165 Airport Blvd, Austin, TX 78702",
+  "hours": "24/7",
+  "online_or_in_person": "In person",
+  "category": "Mental Health Aid"
+}]
 
