@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let allResources = [];
 
   async function loadResources() {
-    const response = await fetch("../js/Resources.json");
+    const response = await fetch("js/Resources.json");
     const jsonData = await response.json();
     const userData = JSON.parse(localStorage.getItem("userResources")) || [];
     allResources = [...jsonData, ...userData];
