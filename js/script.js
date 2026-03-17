@@ -9,7 +9,7 @@ let currentSearch = "";
 // Load JSON
 async function loadResources() {
   // Load original JSON
-  const res = await fetch("../js/resources.json");
+  const res = await fetch("../js/Resources.json");
   const jsonResources = await res.json();
 
   const userResources = JSON.parse(localStorage.getItem("userResources")) || [];
