@@ -11,31 +11,34 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 5%; /* Flexible side padding for all screens */
-  flex-wrap: wrap;  /* Allows content to stack on mobile */
+  padding: 80px 5%; /* Increased vertical padding for big text */
+  flex-wrap: wrap;
+  gap: 50px;
 }
 
 .hero-left {
   font-family: 'Poppins', sans-serif;
-  flex: 1;
-  min-width: 300px;
+  flex: 1.5; /* Gives the text more room to stretch */
+  min-width: 320px;
 }
 
 .welcome {
-  font-size: clamp(40px, 8vw, 80px);
-  font-weight: 700;
+  /* Scaled up: Min 60px, Fluid 12% of screen, Max 140px */
+  font-size: clamp(60px, 12vw, 140px); 
+  font-weight: 800;
   margin: 0;
   color: #333;
-  line-height: 1.1;
+  line-height: 0.9; /* Tighter line height for massive text */
 }
 
 .to-austin {
-  font-size: clamp(30px, 6vw, 60px);
+  /* Scaled up: Min 45px, Fluid 9% of screen, Max 100px */
+  font-size: clamp(45px, 9vw, 100px);
   font-weight: 450;
   margin: 0;
   color: #333;
   padding-left: 10px;
-  line-height: 1.1;
+  line-height: 0.9;
 }
 
 .to-austin .austin {
@@ -44,9 +47,10 @@ body {
 }
 
 .resource-hub {
-  font-size: clamp(18px, 4vw, 28px); /* Responsive sub-header */
+  /* Scaled up: Min 24px, Fluid 5% of screen, Max 48px */
+  font-size: clamp(24px, 5vw, 48px);
   font-weight: 400;
-  margin: 0;
+  margin-top: 20px;
   color: #333;
   padding-left: 10px;
 }
@@ -54,15 +58,20 @@ body {
 .hero-buttons {
   display: flex;
   gap: 20px;
-  padding-top: 10px;
+  padding-top: 30px;
 }
 
 .find-btn, .add-btn {
-  padding: 10px 28px;
-  font-size: 16px;
+  padding: 15px 35px; /* Bigger buttons to match big text */
+  font-size: 18px;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 25px;
+  border-radius: 30px;
+  transition: transform 0.2s ease;
+}
+
+.find-btn:hover, .add-btn:hover {
+  transform: translateY(-3px);
 }
 
 .find-btn {
@@ -85,7 +94,7 @@ body {
 
 .hero-right img {
   width: 100%;
-  max-width: 400px; /* Prevents image from being too huge */
+  max-width: 500px; /* Scaled up image slightly */
   height: auto;
 }
 
@@ -94,7 +103,7 @@ hr {
   border: 0;
   height: 2px;
   background: #bdbfcc;
-  margin: 37px auto;
+  margin: 60px auto; /* More space around the divider */
   width: 90%;
 }
 
@@ -118,7 +127,7 @@ hr {
 
 .spotlights-title {
   font-family: 'Quicksand', sans-serif;
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(40px, 6vw, 64px); /* Scaled up spotlights title */
   font-weight: 700;
   margin: 15px 0 5px 0;
   color: #0b0a0a;
@@ -126,9 +135,9 @@ hr {
 
 .spotlights-subtitle {
   font-family: 'Quicksand', sans-serif;
-  font-size: clamp(18px, 3vw, 24px);
+  font-size: clamp(20px, 3.5vw, 32px); /* Scaled up subtitle */
   color: #505050;
-  margin-bottom: 80px; 
+  margin-bottom: 100px; /* Big gap to accommodate the scaled middle card */
   font-weight: 300;
 }
 
@@ -136,7 +145,7 @@ hr {
 .spotlights-cards {
   display: flex;
   flex-wrap: wrap;       
-  gap: 25px;             
+  gap: 40px; /* Increased gap for more breathing room */
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
@@ -146,20 +155,19 @@ hr {
 .spot-card {
   flex: 1 1 300px;      
   max-width: 400px;     
-  min-height: 450px;
+  min-height: 480px; /* Slightly taller for more content */
   position: relative;
-  perspective: 1000px; 
+  transition: transform 0.3s ease;
 }
 
-
+/* TARGET THE MIDDLE CARD */
 @media (min-width: 1024px) {
   .spot-card:nth-child(2) {
-    transform: scale(1.1); 
+    transform: scale(1.15); /* Slightly bigger scale (1.15) */
     z-index: 10;           
-    margin: 0 20px;       
+    margin: 0 30px; /* More horizontal space for the scaled card */
   }
 }
-
 
 @media (max-width: 1023px) {
   .spot-card:nth-child(2) {
@@ -167,8 +175,6 @@ hr {
     margin: 0;
   }
 }
-
-
 
 /* --- CARD INTERNALS & FLIP EFFECT --- */
 .spot-card-inner {
@@ -195,6 +201,7 @@ hr {
   background: #ffffff;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft shadow for depth */
 }
 
 .spot-card-front {
@@ -222,7 +229,7 @@ hr {
 
 .spot-name {
   font-family: 'Quicksand', sans-serif;
-  font-size: 28px;
+  font-size: 32px; /* Bigger card titles */
   font-weight: 700;
   margin: 0;
   color: #222;
@@ -230,9 +237,9 @@ hr {
 
 .spot-desc {
   font-family: 'Quicksand', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: #777;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .spot-footer {
@@ -262,7 +269,7 @@ hr {
 
 .back-title {
   font-family: 'Quicksand', sans-serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
   border-bottom: 1px solid #eee;
@@ -270,9 +277,9 @@ hr {
 }
 
 .back-content p {
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 12px;
-  line-height: 1.4;
+  line-height: 1.5;
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -281,6 +288,11 @@ hr {
   .hero {
     flex-direction: column;
     text-align: center;
+    padding: 40px 5%;
+  }
+
+  .hero-left {
+    flex: 1;
   }
 
   .hero-buttons {
