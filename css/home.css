@@ -140,6 +140,7 @@ hr {
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
+  padding: 40px 5%;
   perspective: 2000px;
 }
 
