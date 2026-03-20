@@ -128,7 +128,7 @@ hr {
   font-family: 'Quicksand', sans-serif;
   font-size: clamp(18px, 3vw, 24px);
   color: #505050;
-  margin-bottom: 40px;
+  margin-bottom: 80px; 
   font-weight: 300;
 }
 
@@ -140,7 +140,6 @@ hr {
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
-  padding: 40px 5%;
   perspective: 2000px;
 }
 
