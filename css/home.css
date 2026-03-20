@@ -18,7 +18,7 @@ body {
 }
 
 .welcome {
-  font-size: 80px;
+  font-size: clamp(40px, 8vw, 80px);
   font-weight: 700;
   margin: 0;
   color: #333;
@@ -26,7 +26,7 @@ body {
 }
 
 .to-austin {
-  font-size: 60px;
+  font-size: clamp(30px, 6vw, 60px);
   font-weight: 450;
   margin: 0;
   color: #333;
@@ -242,10 +242,27 @@ hr {
   font-family: 'Quicksand', sans-serif;
 }
 
+.spotlight-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  flex: 1 1 300px; 
+  max-width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
-    padding: 30px 20px;
+    padding: 40px 5%;
+    flex-wrap: wrap;
     text-align: center;
   }
   .spotlights-cards, #spotlightsContainer {
@@ -258,3 +275,23 @@ hr {
     min-height: 450px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* Shrink text further for mobile */
+  .resource-hub {
+    font-size: 18px;
+  }
+}
+
+
