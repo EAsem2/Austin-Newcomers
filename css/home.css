@@ -140,6 +140,7 @@ hr {
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
+  perspective: 2000px;
 }
 
 .spot-card {
@@ -147,8 +148,27 @@ hr {
   max-width: 400px;     
   min-height: 450px;
   position: relative;
-  perspective: 1000px; /* Essential for the 3D flip */
+  perspective: 1000px; 
 }
+
+
+@media (min-width: 1024px) {
+  .spot-card:nth-child(2) {
+    transform: scale(1.1); 
+    z-index: 10;           
+    margin: 0 20px;       
+  }
+}
+
+
+@media (max-width: 1023px) {
+  .spot-card:nth-child(2) {
+    transform: scale(1);
+    margin: 0;
+  }
+}
+
+
 
 /* --- CARD INTERNALS & FLIP EFFECT --- */
 .spot-card-inner {
