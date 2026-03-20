@@ -11,9 +11,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 5%; /* Increased vertical padding for big text */
+  padding: 80px 4%; /* Increased vertical padding for big text */
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 40px;
 }
 
 .hero-left {
