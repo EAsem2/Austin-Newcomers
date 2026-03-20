@@ -6,9 +6,19 @@ body {
   background-color: #fbfaf6;
 }
 
+/* --- HERO SECTION --- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 5%; /* Flexible side padding for all screens */
+  flex-wrap: wrap;  /* Allows content to stack on mobile */
+}
 
 .hero-left {
   font-family: 'Poppins', sans-serif;
+  flex: 1;
+  min-width: 300px;
 }
 
 .welcome {
@@ -34,7 +44,7 @@ body {
 }
 
 .resource-hub {
-  font-size: 28px;
+  font-size: clamp(18px, 4vw, 28px); /* Responsive sub-header */
   font-weight: 400;
   margin: 0;
   color: #333;
@@ -66,12 +76,20 @@ body {
   color: #666a86;
 }
 
-.hero-right img {
-  width: 300px;
-  height: auto;
-  padding-right: 20px;
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
 }
 
+.hero-right img {
+  width: 100%;
+  max-width: 400px; /* Prevents image from being too huge */
+  height: auto;
+}
+
+/* --- DIVIDERS & CONTAINERS --- */
 hr {
   border: 0;
   height: 2px;
@@ -81,7 +99,7 @@ hr {
 }
 
 .spotlights {
-  padding: 50px 50px;
+  padding: 50px 5%;
   text-align: center;
 }
 
@@ -100,7 +118,7 @@ hr {
 
 .spotlights-title {
   font-family: 'Quicksand', sans-serif;
-  font-size: 48px;
+  font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
   margin: 15px 0 5px 0;
   color: #0b0a0a;
@@ -108,12 +126,31 @@ hr {
 
 .spotlights-subtitle {
   font-family: 'Quicksand', sans-serif;
-  font-size: 24px;
+  font-size: clamp(18px, 3vw, 24px);
   color: #505050;
   margin-bottom: 40px;
   font-weight: 300;
 }
 
+/* --- RESOURCE CARDS (FLEXIBLE GRID) --- */
+.spotlights-cards {
+  display: flex;
+  flex-wrap: wrap;       
+  gap: 25px;             
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.spot-card {
+  flex: 1 1 300px;      
+  max-width: 400px;     
+  min-height: 450px;
+  position: relative;
+  perspective: 1000px; /* Essential for the 3D flip */
+}
+
+/* --- CARD INTERNALS & FLIP EFFECT --- */
 .spot-card-inner {
   position: relative;
   width: 100%;
@@ -165,7 +202,7 @@ hr {
 
 .spot-name {
   font-family: 'Quicksand', sans-serif;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   margin: 0;
   color: #222;
@@ -173,7 +210,7 @@ hr {
 
 .spot-desc {
   font-family: 'Quicksand', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #777;
   margin-top: 8px;
 }
@@ -219,34 +256,22 @@ hr {
   font-family: 'Quicksand', sans-serif;
 }
 
-
-/* 1. This handles the container for the boxes */
-.spotlights-cards {
-  display: flex;
-  flex-wrap: wrap;       
-  gap: 25px;             
-  justify-content: center;
-  padding: 40px 5%;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* 2. This makes the individual boxes ("cards") shrink and grow */
-.spot-card {
-  flex: 1 1 300px;      
-  max-width: 400px;     
-  min-height: 450px;
-  position: relative;    
-}
+/* --- MOBILE SPECIFIC FIXES --- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
 
   .hero-buttons {
     justify-content: center;
   }
 
-  /* Shrink text further for mobile */
+  .to-austin {
+    padding-left: 0;
+  }
+
   .resource-hub {
-    font-size: 18px;
+    padding-left: 0;
   }
 }
-
-
