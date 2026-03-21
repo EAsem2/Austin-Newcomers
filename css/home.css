@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 4%; /* Increased vertical padding for big text */
+  padding: 20px 4% 80px 4%;
   flex-wrap: wrap;
   gap: 40px;
 }
@@ -35,7 +35,7 @@ body {
   /* Scaled up: Min 45px, Fluid 9% of screen, Max 100px */
   font-size: clamp(45px, 9vw, 100px);
   font-weight: 450;
-  margin: 0;
+  margin: -10px;
   color: #333;
   padding-left: 10px;
   line-height: 0.9;
@@ -288,7 +288,7 @@ hr {
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 40px 5%;
+    padding: 20px 5%;
   }
 
   .hero-left {
