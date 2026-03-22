@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 45px 2% 80px 2%; /* Changed 4% to 2% to pull content toward the edges */
+    padding: 45px 1% 80px 1%; 
     flex-wrap: wrap;
     gap: 40px;
 }
@@ -36,7 +36,7 @@ body {
   /* Scaled up: Min 45px, Fluid 9% of screen, Max 100px */
   font-size: clamp(45px, 9vw, 100px);
   font-weight: 450;
-  margin: -10px;
+  margin: -10px 0;
   color: #333;
   padding-left: 0px;
   line-height: 0.9;
