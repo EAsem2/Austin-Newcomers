@@ -1,208 +1,578 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Quicksand:wght@300;400;700&display=swap');
+
+@import url('https://fonts.googleapis.com');
+
 
 body {
+
   margin: 0;
+
   background-color: #fbfaf6;
+
 }
+
 
 /* --- HERO SECTION --- */
+
+
 .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 45px 1% 80px 1%; 
-  flex-wrap: wrap;
-  gap: 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 45px 1% 80px 1%; 
+
+    flex-wrap: wrap;
+
+    gap: 40px;
+
 }
+
 
 .hero-left {
+
   font-family: 'Poppins', sans-serif;
-  flex: 1.5;
+
+  flex: 1.5; /* Gives the text more room to stretch */
+
   min-width: 320px;
+
 }
+
 
 .welcome {
+
+  /* Scaled up: Min 60px, Fluid 12% of screen, Max 140px */
+
   font-size: clamp(60px, 12vw, 140px); 
+
   font-weight: 800;
+
   margin: 0;
+
   color: #333;
-  line-height: 0.9;
+
+  line-height: 0.9; /* Tighter line height for massive text */
+
 }
+
 
 .to-austin {
-  font-size: clamp(45px, 9vw, 100px);
-  font-weight: 450;
-  /* FIXED: Nudged left from 67px to 30px for better balance */
-  margin: -10px 0 -10px 30px; 
-  color: #333;
-  line-height: 0.9;
+
+    /* ... your existing styles ... */
+
+    font-size: clamp(45px, 9vw, 100px);
+
+    font-weight: 450;
+
+    margin: -10px 0; 
+
+    margin-left: 67px; 
+
+    color: #333;
+
+    line-height: 0.9;
+
 }
+
 
 .to-austin .austin {
+
   color: #7a7a7a;
+
   font-weight: 700;
+
 }
+
 
 .resource-hub {
+
+  /* Scaled up: Min 24px, Fluid 5% of screen, Max 48px */
+
   font-size: clamp(24px, 5vw, 48px);
+
   font-weight: 400;
-  margin-top: 10px;
+
+  margin-top: 20px;
+
   color: #333;
-  /* Match the margin of .to-austin */
-  margin-left: 30px; 
-  padding-left: 0;
+
+  padding-left: 10px;
+
 }
+
 
 .hero-buttons {
+
   display: flex;
+
   gap: 20px;
+
   padding-top: 10px;
-  margin-left: 30px;
+
 }
+
 
 .find-btn, .add-btn {
-  padding: 15px 35px;
+
+  padding: 15px 35px; /* Bigger buttons to match big text */
+
   font-size: 18px;
+
   font-weight: bold;
+
   text-decoration: none;
+
   border-radius: 30px;
+
   transition: transform 0.2s ease;
+
 }
+
 
 .find-btn:hover, .add-btn:hover {
+
   transform: translateY(-3px);
+
 }
+
 
 .find-btn {
+
   background-color: #666a86;
+
   color: white;
+
 }
+
 
 .add-btn {
+
   background-color: #ffffff;
+
   border: 2px solid #666a86;
+
   color: #666a86;
+
 }
+
 
 .hero-right {
+
   flex: 1;
+
   display: flex;
+
   justify-content: center;
+
   min-width: 300px;
+
 }
+
 
 .hero-right img {
+
   width: 100%;
-  max-width: 350px;
+
+  max-width: 350px; /* Scaled up image slightly */
+
   height: auto;
+
 }
+
 
 /* --- DIVIDERS & CONTAINERS --- */
+
 hr {
+
   border: 0;
+
   height: 2px;
+
   background: #bdbfcc;
-  /* FIXED: Reduced top margin from 60px to 20px to close the gap */
-  margin: 20px auto 60px auto; 
+
+  margin: 60px auto; /* More space around the divider */
+
   width: 90%;
+
 }
+
 
 .spotlights {
+
   padding: 50px 5%;
+
   text-align: center;
+
 }
 
-/* --- RESOURCE CARDS --- */
-.spotlights-cards {
-  display: flex;
-  flex-wrap: wrap;       
-  gap: 40px;
-  justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
-  perspective: 2000px;
+
+.editors-box {
+
+  display: inline-block;
+
+  background-color: #ffdfe4;
+
+  padding: 8px 20px;
+
+  border-radius: 25px;
+
+  margin-top: 35px;
+
+  font-family: 'Quicksand', sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #fea8b4;
+
+  text-transform: uppercase;
+
 }
+
+
+.spotlights-title {
+
+  font-family: 'Quicksand', sans-serif;
+
+  font-size: clamp(40px, 6vw, 64px); /* Scaled up spotlights title */
+
+  font-weight: 700;
+
+  margin: 15px 0 5px 0;
+
+  color: #0b0a0a;
+
+}
+
+
+.spotlights-subtitle {
+
+  font-family: 'Quicksand', sans-serif;
+
+  font-size: clamp(20px, 3.5vw, 32px); /* Scaled up subtitle */
+
+  color: #505050;
+
+  margin-bottom: 100px; /* Big gap to accommodate the scaled middle card */
+
+  font-weight: 300;
+
+}
+
+
+/* --- RESOURCE CARDS (FLEXIBLE GRID) --- */
+
+.spotlights-cards {
+
+  display: flex;
+
+  flex-wrap: wrap;       
+
+  gap: 40px; /* Increased gap for more breathing room */
+
+  justify-content: center;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  perspective: 2000px;
+
+}
+
 
 .spot-card {
+
   flex: 1 1 250px;      
+
   max-width: 320px;     
-  min-height: 420px; /* Slightly taller to ensure text fits */
+
+  min-height: 400px; /* Slightly taller for more content */
+
   position: relative;
+
   transition: transform 0.3s ease;
+
 }
 
-/* FIXED: Middle Card Scaling & Text Fit */
+
+/* TARGET THE MIDDLE CARD */
+
 @media (min-width: 1024px) {
+
   .spot-card:nth-child(2) {
-    transform: scale(1.10); /* Dropped from 1.15 so it doesn't crowd text */
+
+    transform: scale(1.15); /* Slightly bigger scale (1.15) */
+
     z-index: 10;           
-    margin: 0 10px;
+
+    margin: 0 15px; /* More horizontal space for the scaled card */
+
   }
-  
-  /* Shrink middle card text slightly if it still overflows */
-  .spot-card:nth-child(2) .spot-name {
-    font-size: 22px;
-  }
+
 }
+
+
+@media (max-width: 1023px) {
+
+  .spot-card:nth-child(2) {
+
+    transform: scale(1.08);
+
+    z-index: 10;
+
+    margin: 0 15px;
+
+  }
+
+}
+
+
+/* --- CARD INTERNALS & FLIP EFFECT --- */
 
 .spot-card-inner {
+
   position: relative;
+
   width: 100%;
+
   height: 100%;
+
   transition: transform 0.8s;
+
   transform-style: preserve-3d;
+
 }
+
 
 .spot-card.flipped .spot-card-inner {
+
   transform: rotateY(180deg);
+
 }
+
 
 .spot-card-front, .spot-card-back {
+
   position: absolute;
+
   width: 100%;
+
   height: 100%;
+
   backface-visibility: hidden;
+
   border: 1px solid #d1d1d1;
+
   border-radius: 25px;
-  /* FIXED: Reduced padding from 35px to 20px so text has more room */
-  padding: 20px; 
+
+  padding: 35px;
+
   box-sizing: border-box;
+
   background: #ffffff;
+
   display: flex;
+
   flex-direction: column;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft shadow for depth */
+
 }
+
+
+.spot-card-front {
+
+  z-index: 2;
+
+  justify-content: space-between;
+
+}
+
+
+.tag {
+
+  align-self: flex-start;
+
+  border: 1px solid #999;
+
+  border-radius: 20px;
+
+  padding: 5px 15px;
+
+  font-size: 12px;
+
+  font-family: 'Quicksand', sans-serif;
+
+  color: #555;
+
+}
+
+
+.spot-main-content {
+
+  text-align: center;
+
+  flex-grow: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
 
 .spot-name {
+
   font-family: 'Quicksand', sans-serif;
-  font-size: 22px; /* Adjusted size */
+
+  font-size: 24px; 
+
   font-weight: 700;
+
   margin: 0;
+
   color: #222;
+
 }
+
 
 .spot-desc {
+
   font-family: 'Quicksand', sans-serif;
-  font-size: 16px; /* Adjusted for better card fit */
+
+  font-size: 18px;
+
   color: #777;
+
   margin-top: 10px;
+
 }
 
+
+.spot-footer {
+
+  text-align: left;
+
+  margin-top: 20px;
+
+}
+
+
+.spot-info {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 10px;
+
+  font-size: 14px;
+
+  color: #666;
+
+}
+
+
+.icon {
+
+  width: 20px;
+
+  height: 20px;
+
+  opacity: 0.6;
+
+}
+
+
+.spot-card-back {
+
+  transform: rotateY(180deg);
+
+  background-color: #fcfcfc;
+
+}
+
+
+.back-title {
+
+  font-family: 'Quicksand', sans-serif;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  margin-bottom: 15px;
+
+  border-bottom: 1px solid #eee;
+
+  padding-bottom: 10px;
+
+}
+
+
+.back-content p {
+
+  font-size: 15px;
+
+  margin-bottom: 12px;
+
+  line-height: 1.5;
+
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+
 /* --- MOBILE SPECIFIC FIXES --- */
+
 @media (max-width: 768px) {
+
   .hero {
+
     flex-direction: column;
+
     text-align: center;
+
     padding: 20px 5%;
+
   }
+
+
+  .hero-left {
+
+    flex: 1;
+
+  }
+
+
+  .hero-buttons {
+
+    justify-content: center;
+
+  }
+
 
   .to-austin {
-    margin-left: 0; /* Resetting the left shift for mobile centering */
+
+    padding-left: 0;
+
   }
 
-  .spot-card:nth-child(2) {
-    transform: scale(1); /* No scaling on mobile to prevent overlap */
-    margin: 0;
+
+  .resource-hub {
+
+    padding-left: 0;
+
   }
+
 }
