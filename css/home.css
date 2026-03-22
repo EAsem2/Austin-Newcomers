@@ -7,13 +7,14 @@ body {
 }
 
 /* --- HERO SECTION --- */
+
 .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 2% 80px 4%;
-  flex-wrap: wrap;
-  gap: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 2% 80px 2%; /* Changed 4% to 2% to pull content toward the edges */
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
 .hero-left {
