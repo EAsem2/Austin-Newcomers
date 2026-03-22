@@ -57,8 +57,8 @@ body {
 .hero-buttons {
   display: flex;
   gap: 20px;
-  /* FIXED: Reduced padding to move buttons closer to text */
-  padding-top: 10px; 
+  padding-top: 10px;
+  margin-left: 30px;
 }
 
 .find-btn, .add-btn {
