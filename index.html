@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Austin Newcomers</title>
-  <link href="css/Header.css" rel="stylesheet" />
-  <link href="css/A.Resource.css" rel="stylesheet" />
-  <link href="css/Footer.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austin Newcomers</title>
+    <link href="css/Header.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/Footer.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Avenir&display=swap" rel="stylesheet">
 
 </head>
 <body>
-
-  <!-- HEADER -->
   <header>
     <div class="logo-area">
-        <img src="/Images/Austin_Newcomers_Logo (2).png" alt="Logo">
+        <img src="Images/Austin_Newcomers_Logo (2).png" alt="Logo">
     </div>
 <nav>
 <div class="nav-item">
-<a href="/index.html">Home</a>
+<a href="index.html">Home</a>
 </div>
-  
-<div class="nav-item dropdown">
-<a href="/html/Resources.html" class="dropbtn">Resources</a>
 
-<div class="dropdown-content">
-  <a href="/html/AddResource.html">Add Resource</a>
+<div class="nav-item dropdown">
+  <a href="html/Resources.html" class="dropbtn">Resources</a>
+
+  <div class="dropdown-content">
+    <a href="html/AddResource.html">Add Resource</a>
+  </div>
 </div>
+
+<div class="nav-item">
+<a href="html/AboutUs.html">About Us</a>
 </div>
 <div class="nav-item">
-<a href="/html/AboutUs.html">About Us</a>
+<a href="html/Reference.html">References</a>
 </div>
-<div class="nav-item">
-<a href="/html/Reference.html">References</a>
-</div>
-<a href="/html/ContactUs.html" class="contact-btn">Contact Us</a>
+<a href="html/ContactUs.html" class="contact-btn">Contact Us</a>
 </nav>
 <button class="navicon" id="navicon">
 <span></span>
@@ -46,62 +45,60 @@
 </button>
 </header>
 
+<section class="hero">
+<div class="hero-left">
+    <h2 class="welcome">Welcome</h2>
 
-  <!-- Resource Directory Section -->
-<section class="resource-header">
-  <div class="header-left">
-    <h1 class="title">Resource Directory</h1>
-    <p class="subtitle">Find the help you need closest</p>
-  </div>
+    <h3 class="to-austin">
+        to <span class="austin">Austin’s</span>
+    </h3>
 
-  <div class="header-right"> 
-  <div class="search-wrapper">
-   
-  <div class="spot-info">
-    <img src="/Images/search.png" class="icon">
-  </div>
-  <input type="text" id="searchInput" placeholder="Search Resources" /> 
-  </div> </div>
+    <p class="resource-hub">Newcomer Resource Hub</p>
+
+    <div class="hero-buttons">
+        <a href="html/Resources.html" class="find-btn">Find Resource</a>
+        <a href="html/AddResource.html" class="add-btn">Add a Resource</a>
+    </div>
+</div>
+
+    <div class="hero-right">
+        <img src="Images/2.png" alt="City Illustration">
+    </div>
+
+</section>
+     <!-- Community Spotlights -->  
+    <section class="spotlights">
+<hr>
+    <div class="editors-box">EDITOR'S PICKS</div>
+
+    <h2 class="spotlights-title">Community Spotlights</h2>
+
+    <p class="spotlights-subtitle">Highly recommended programs</p>
+
+    <!-- JS will insert 3 cards here -->
+    <div id="spotlightsContainer" class="spotlights-cards"></div>
+
 </section>
 
-<main class="resource-main">
-  <section class="filters">
-    <button class="filter-btn all-btn" data-category="All">All</button>
-    <button class="filter-btn" data-category="Transportation">Transportation</button>
-    <button class="filter-btn" data-category="Government Assistance">Government Assistance</button>
-    <button class="filter-btn" data-category="Food">Food</button>
-    <button class="filter-btn" data-category="3rd Party Assistance">3rd Party Assistance</button>
-    <button class="filter-btn" data-category="Legal">Legal</button>
-    <button class="filter-btn" data-category="Recreational Activities">Recreational Activities</button>
-    <button class="filter-btn" data-category="Inclusivity">Inclusivity</button>
-    <button class="filter-btn" data-category="Education – Kids">Education(k-12)</button>
-    <button class="filter-btn" data-category="Education – Adults">Education(Adults)</button>
-    <button class="filter-btn" data-category="Financial Security">Financial Security</button>
-    <button class="filter-btn" data-category="Housing Assistance">Housing Assistance</button>
-    <button class="filter-btn" data-category="Shelters">Shelter</button>
-    <button class="filter-btn" data-category="Mental Health Aid">Mental Health Aid</button>
-   </section>
 
 
-  <div id="resourcesGrid" class="resource-grid"></div>
-</main>
 <!-- FOOTER SECTION -->
 <footer class="site-footer">
   <div class="footer-columns">
     <div class="footer-column">
       <h3>Main Links</h3>
       <ul>
-        <li><a href="/index.html">Home Page</a></li>
-        <li><a href="/html/Resources.html">Resources</a></li>
-        <li><a href="/html/AddResource.html">Add Resources</a></li>
-        <li><a href="/html/AboutUs.html">About Us</a></li>
+        <li><a href="index.html">Home Page</a></li>
+        <li><a href="html/Resources.html">Resources</a></li>
+        <li><a href="html/AddResource.html">Add Resources</a></li>
+        <li><a href="html/AboutUs.html">About Us</a></li>
       </ul>
     </div>
 
     <div class="footer-column">
       <h3>Contact Information</h3>
       <ul>
-        <li><a href="/html/ContactUs.html">Form: Contact Us</a></li>
+        <li><a href="html/ContactUs.html">Form: Contact Us</a></li>
         <li>Email: <a href="mailto:austin.newcomershub@gmail.com">austin.newcomershub@gmail.com</a></li>
       </ul>
     </div>
@@ -110,9 +107,19 @@
     <p>Copyright © 2026 Welcome Austin’s Newcomers resource-hub/Webmaster Team. All Rights Reserved.</p>
   </div>
 </footer>
+<script>
+  //Ctrl + Shift + A
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.shiftKey && e.code === 'KeyA') {
+      window.location.href = 'html/dashboard-v92-x.html';
+    }
+  });
+</script> 
+<script src="js/home.js"></script>
+<script src="js/navi.js"></script>
+<script src="js/script.js"></script>
 
-<script src="/js/navi.js"></script>
-<script src="/js/script.js"></script>
 
 </body>
+
 </html>
