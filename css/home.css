@@ -59,7 +59,7 @@ body {
 .hero-buttons {
   display: flex;
   gap: 20px;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .find-btn, .add-btn {
