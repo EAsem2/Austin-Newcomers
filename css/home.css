@@ -166,7 +166,7 @@ hr {
   .spot-card:nth-child(2) {
     transform: scale(1.15); /* Slightly bigger scale (1.15) */
     z-index: 10;           
-    margin: 0 30px; /* More horizontal space for the scaled card */
+    margin: 0 15px; /* More horizontal space for the scaled card */
   }
 }
 
