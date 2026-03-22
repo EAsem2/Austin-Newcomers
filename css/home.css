@@ -33,13 +33,13 @@ body {
 }
 
 .to-austin {
-  /* Scaled up: Min 45px, Fluid 9% of screen, Max 100px */
-  font-size: clamp(45px, 9vw, 100px);
-  font-weight: 450;
-  margin: -10px 0;
-  color: #333;
-  padding-left: 0px;
-  line-height: 0.9;
+    /* ... your existing styles ... */
+    font-size: clamp(45px, 9vw, 100px);
+    font-weight: 450;
+    margin: -10px 0; 
+    margin-left: 40px; 
+    color: #333;
+    line-height: 0.9;
 }
 
 .to-austin .austin {
