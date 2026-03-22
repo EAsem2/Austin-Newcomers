@@ -154,9 +154,9 @@ hr {
 }
 
 .spot-card {
-  flex: 1 1 300px;      
-  max-width: 400px;     
-  min-height: 480px; /* Slightly taller for more content */
+  flex: 1 1 250px;      
+  max-width: 320px;     
+  min-height: 400px; /* Slightly taller for more content */
   position: relative;
   transition: transform 0.3s ease;
 }
@@ -172,8 +172,9 @@ hr {
 
 @media (max-width: 1023px) {
   .spot-card:nth-child(2) {
-    transform: scale(1);
-    margin: 0;
+    transform: scale(1.08);
+    z-index: 10;
+    margin: 0 15px;
   }
 }
 
@@ -230,7 +231,7 @@ hr {
 
 .spot-name {
   font-family: 'Quicksand', sans-serif;
-  font-size: 32px; /* Bigger card titles */
+  font-size: 24px; 
   font-weight: 700;
   margin: 0;
   color: #222;
