@@ -1,578 +1,408 @@
 @charset "utf-8";
-
-@import url('https://fonts.googleapis.com');
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
 body {
-
   margin: 0;
-
   background-color: #fbfaf6;
-
 }
 
-
-/* --- HERO SECTION --- */
-
-
+/* HERO SECTION */
 .hero {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 45px 1% 80px 1%; 
-
-    flex-wrap: wrap;
-
-    gap: 40px;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
 }
-
 
 .hero-left {
-
   font-family: 'Poppins', sans-serif;
-
-  flex: 1.5; /* Gives the text more room to stretch */
-
-  min-width: 320px;
-
 }
-
 
 .welcome {
-
-  /* Scaled up: Min 60px, Fluid 12% of screen, Max 140px */
-
-  font-size: clamp(60px, 12vw, 140px); 
-
-  font-weight: 800;
-
+  font-size: 80px;
+  font-weight: 700;
   margin: 0;
-
   color: #333;
-
-  line-height: 0.9; /* Tighter line height for massive text */
-
 }
 
+.welcome,
+.to-austin {
+  line-height: 1.1;
+}
 
 .to-austin {
-
-    /* ... your existing styles ... */
-
-    font-size: clamp(45px, 9vw, 100px);
-
-    font-weight: 450;
-
-    margin: -10px 0; 
-
-    margin-left: 67px; 
-
-    color: #333;
-
-    line-height: 0.9;
-
+  font-size: 60px;
+  font-weight: 450;
+  margin: 0;
+  color: #333;
+  padding-left: 10px;
 }
-
 
 .to-austin .austin {
-
   color: #7a7a7a;
-
   font-weight: 700;
-
 }
-
 
 .resource-hub {
-
-  /* Scaled up: Min 24px, Fluid 5% of screen, Max 48px */
-
-  font-size: clamp(24px, 5vw, 48px);
-
+  font-size: 28px;
   font-weight: 400;
-
-  margin-top: 20px;
-
+  margin: 0;
   color: #333;
-
   padding-left: 10px;
-
 }
-
 
 .hero-buttons {
-
   display: flex;
-
   gap: 20px;
-
   padding-top: 10px;
-
 }
 
-
-.find-btn, .add-btn {
-
-  padding: 15px 35px; /* Bigger buttons to match big text */
-
-  font-size: 18px;
-
+.find-btn,
+.add-btn {
+  padding: 10px 28px;
+  font-size: 16px;
   font-weight: bold;
-
   text-decoration: none;
-
-  border-radius: 30px;
-
-  transition: transform 0.2s ease;
-
+  border-radius: 25px;
 }
-
-
-.find-btn:hover, .add-btn:hover {
-
-  transform: translateY(-3px);
-
-}
-
 
 .find-btn {
-
   background-color: #666a86;
-
   color: white;
-
 }
-
 
 .add-btn {
-
   background-color: #ffffff;
-
   border: 2px solid #666a86;
-
   color: #666a86;
-
 }
-
-
-.hero-right {
-
-  flex: 1;
-
-  display: flex;
-
-  justify-content: center;
-
-  min-width: 300px;
-
-}
-
 
 .hero-right img {
-
-  width: 100%;
-
-  max-width: 350px; /* Scaled up image slightly */
-
+  width: 300px;
   height: auto;
-
+  padding-right: 20px;
 }
-
-
-/* --- DIVIDERS & CONTAINERS --- */
 
 hr {
-
-  border: 0;
-
-  height: 2px;
-
-  background: #bdbfcc;
-
-  margin: 60px auto; /* More space around the divider */
-
-  width: 90%;
-
+    border: 0;
+    height: 2px;
+    background: #bdbfcc; /* Matches your button color */
+    margin: 37px auto;
+    width: 90%;
 }
 
 
+/* COMMUNITY SPOTLIGHTS SECTION */
 .spotlights {
-
-  padding: 50px 5%;
-
+  padding: 50px 50px;
   text-align: center;
-
 }
-
 
 .editors-box {
-
   display: inline-block;
-
   background-color: #ffdfe4;
-
   padding: 8px 20px;
-
   border-radius: 25px;
-
-  margin-top: 35px;
-
-  font-family: 'Quicksand', sans-serif;
-
-  font-size: 14px;
-
-  font-weight: 700;
-
+  margin-top:35px;
+  margin-bottom: 0px;
+  font-family: 'Avenir', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0px;
   color: #fea8b4;
-
-  text-transform: uppercase;
-
+  
 }
-
 
 .spotlights-title {
-
   font-family: 'Quicksand', sans-serif;
-
-  font-size: clamp(40px, 6vw, 64px); /* Scaled up spotlights title */
-
+  font-size: 45.3px;
   font-weight: 700;
-
-  margin: 15px 0 5px 0;
-
+  margin: 10px 0 5px 0;
   color: #0b0a0a;
-
 }
-
 
 .spotlights-subtitle {
-
   font-family: 'Quicksand', sans-serif;
-
-  font-size: clamp(20px, 3.5vw, 32px); /* Scaled up subtitle */
-
+  font-size: 24.7px;
   color: #505050;
-
-  margin-bottom: 100px; /* Big gap to accommodate the scaled middle card */
-
-  font-weight: 300;
-
+  margin-bottom: 40px;
 }
 
-
-/* --- RESOURCE CARDS (FLEXIBLE GRID) --- */
-
+/* LAYOUT*/
 .spotlights-cards {
-
   display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* all cards match tallest */
+  gap: 30px;
+  margin-top: 40px;
+}
 
-  flex-wrap: wrap;       
-
-  gap: 40px; /* Increased gap for more breathing room */
-
-  justify-content: center;
-
+#spotlightsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 30px;
   width: 100%;
-
-  box-sizing: border-box;
-
-  perspective: 2000px;
-
 }
 
-
+/* CARD */
 .spot-card {
-
-  flex: 1 1 250px;      
-
-  max-width: 320px;     
-
-  min-height: 400px; /* Slightly taller for more content */
-
-  position: relative;
-
-  transition: transform 0.3s ease;
-
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  perspective: 1000px;
+  cursor: pointer;
+  min-height: 320px; /* ensures a baseline size */
+  height: auto;      /* allows it to grow */
 }
-
-
-/* TARGET THE MIDDLE CARD */
-
-@media (min-width: 1024px) {
-
-  .spot-card:nth-child(2) {
-
-    transform: scale(1.15); /* Slightly bigger scale (1.15) */
-
-    z-index: 10;           
-
-    margin: 0 15px; /* More horizontal space for the scaled card */
-
-  }
-
-}
-
-
-@media (max-width: 1023px) {
-
-  .spot-card:nth-child(2) {
-
-    transform: scale(1.08);
-
-    z-index: 10;
-
-    margin: 0 15px;
-
-  }
-
-}
-
-
-/* --- CARD INTERNALS & FLIP EFFECT --- */
 
 .spot-card-inner {
-
   position: relative;
-
   width: 100%;
-
-  height: 100%;
-
-  transition: transform 0.8s;
-
-  transform-style: preserve-3d;
-
+  height: auto;
 }
 
 
 .spot-card.flipped .spot-card-inner {
-
   transform: rotateY(180deg);
-
 }
-
-
-.spot-card-front, .spot-card-back {
-
+.spot-card-front,
+.spot-card-back {
   position: absolute;
-
   width: 100%;
-
   height: 100%;
-
   backface-visibility: hidden;
-
-  border: 1px solid #d1d1d1;
-
-  border-radius: 25px;
-
-  padding: 35px;
-
+  border-radius: 30px;
+  padding: 12px;
+  border: #0b0a0a 1px solid;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-
-  background: #ffffff;
-
   display: flex;
-
   flex-direction: column;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft shadow for depth */
-
+  justify-content: flex-start;
+  font-family: 'Quicksand', sans-serif;
+  overflow: visible; /* allow full content */
+  background-color: #f9f9f9;
 }
 
+.spot-card-front,
+.spot-card-back {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.spot-card-inner {
+  display: grid;
+  grid-template-areas: "front";
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.spot-card.flipped .spot-card-inner {
+  transform: rotateY(180deg);
+}
 
 .spot-card-front {
-
-  z-index: 2;
-
-  justify-content: space-between;
-
+  grid-area: front;
+  backface-visibility: hidden;
 }
 
-
-.tag {
-
-  align-self: flex-start;
-
-  border: 1px solid #999;
-
-  border-radius: 20px;
-
-  padding: 5px 15px;
-
-  font-size: 12px;
-
-  font-family: 'Quicksand', sans-serif;
-
-  color: #555;
-
-}
-
-
-.spot-main-content {
-
-  text-align: center;
-
-  flex-grow: 1;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
+.spot-card-back {
+  grid-area: front;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 
 .spot-name {
-
-  font-family: 'Quicksand', sans-serif;
-
-  font-size: 24px; 
-
+  font-size: 20px;
   font-weight: 700;
-
-  margin: 0;
-
-  color: #222;
-
+  margin-top: 35px;
+  color: #333;
 }
-
 
 .spot-desc {
-
-  font-family: 'Quicksand', sans-serif;
-
-  font-size: 18px;
-
-  color: #777;
-
-  margin-top: 10px;
-
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 4px;
+  white-space: normal;
 }
 
-
-.spot-footer {
-
-  text-align: left;
-
-  margin-top: 20px;
-
+.spot-desc + hr {
+  border: none;
+  border-top: .3px solid #ccc;
+  margin: 15px auto;
+  width: 80%; 
 }
-
 
 .spot-info {
-
   display: flex;
-
   align-items: center;
-
-  gap: 12px;
-
-  margin-bottom: 10px;
-
-  font-size: 14px;
-
-  color: #666;
-
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.3;
 }
-
 
 .icon {
-
-  width: 20px;
-
-  height: 20px;
-
-  opacity: 0.6;
-
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
 
-
-.spot-card-back {
-
-  transform: rotateY(180deg);
-
-  background-color: #fcfcfc;
-
-}
-
-
-.back-title {
-
+.tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 10.9px;
+  font-weight: 600;
   font-family: 'Quicksand', sans-serif;
-
-  font-size: 24px;
-
-  font-weight: 700;
-
-  margin-bottom: 15px;
-
-  border-bottom: 1px solid #eee;
-
-  padding-bottom: 10px;
-
+  color: #333;
+  border: 1px solid #ddd;
 }
 
-
-.back-content p {
-
-  font-size: 15px;
-
-  margin-bottom: 12px;
-
-  line-height: 1.5;
-
-  font-family: 'Quicksand', sans-serif;
-
+.spot-card-back h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
 }
 
+.spot-card-back p,
+.spot-card-back a {
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
 
-/* --- MOBILE SPECIFIC FIXES --- */
-
-@media (max-width: 768px) {
-
+@media (max-width: 600px) {
   .hero {
-
     flex-direction: column;
-
+    padding: 30px 20px;
     text-align: center;
-
-    padding: 20px 5%;
-
+    gap: 20px;
   }
-
 
   .hero-left {
-
-    flex: 1;
-
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 
-
-  .hero-buttons {
-
-    justify-content: center;
-
+  .welcome {
+    font-size: 48px;
   }
-
 
   .to-austin {
-
+    font-size: 36px;
     padding-left: 0;
-
   }
-
 
   .resource-hub {
-
+    font-size: 20px;
     padding-left: 0;
-
   }
 
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .find-btn,
+  .add-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  .hero-right img {
+    width: 70%;
+    max-width: 260px;
+    padding: 0;
+  }
+  .spotlights {
+    padding: 40px 20px;
+    margin-top: 40px; /* This creates the gap you're looking for */
+    text-align: center;
+  }
+
+  .spotlights-title {
+    font-size: 32px;
+  }
+
+  .spotlights-subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .editors-box {
+    font-size: 14px;
+    padding: 6px 16px;
+  }
+
+  #spotlightsContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .spot-card {
+    max-width: 360px;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .spot-card-inner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+  }
+
+  .spot-card-front,
+  .spot-card-back {
+    position: relative;
+    width: 100%;
+    height: auto;
+    backface-visibility: hidden;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #000;
+  }
+  .spot-card-back {
+    transform: rotateY(180deg);
+  }
+
+  .spot-card.flipped .spot-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .spot-name {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  .spot-desc {
+    font-size: 13px;
+  }
+
+  .spot-info {
+    font-size: 13px;
+  }
+
+  .icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .tag {
+    font-size: 9px;
+    padding: 3px 8px;
+  }
 }
