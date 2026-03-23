@@ -8,7 +8,7 @@
     <link href="../css/Reference.css" rel="stylesheet">
     <link href="../css/Footer.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <header>
@@ -41,6 +41,14 @@
 <span></span>
 <span></span>
 </button> </header>
+
+<h2 style="text-align:center; margin-top: 40px; color: #2c3e50;">User Submissions</h2>
+    <div id="adminGrid" class="resource-container"></div>
+    
+    <div style="text-align: center; margin: 20px;">
+        <button id="clearAllBtn" class="contact-btn" style="background-color: #e74c3c;">Clear Submissions</button>
+    </div>
+
 <main class="margin">
     <div class="card-container">
     <div class="info-card">
@@ -92,6 +100,7 @@
 </footer>
 
 <script src="../js/navi.js"></script>
+
 </body>
 </html>
 

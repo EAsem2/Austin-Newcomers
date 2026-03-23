@@ -9,7 +9,7 @@
     <link href="../css/Footer.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -155,6 +155,17 @@
 </footer>
 <script src="../js/navi.js"></script>
 <script src="../js/AddResource.js"></script>
+
+
+<script>
+  const SUPABASE_URL = 'https://nwbijelfjgypciwiwuig.supabase.co'
+  const SUPABASE_ANON_KEY = 'https://nwbijelfjgypciwiwuig.supabase.co' // Copy this from your Supabase dashboard
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+  console.log("Supabase initialized:", supabase)
+</script>
+
+
 </body>
 
 </html>
