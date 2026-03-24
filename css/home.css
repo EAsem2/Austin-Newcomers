@@ -91,6 +91,41 @@ hr {
     width: 90%;
 }
 
+/* COMMUNITY SPOTLIGHTS SECTION */
+.spotlights {
+  padding: 50px 50px;
+  text-align: center;
+}
+
+.editors-box {
+  display: inline-block;
+  background-color: #ffdfe4;
+  padding: 8px 20px;
+  border-radius: 25px;
+  margin-top:35px;
+  margin-bottom: 0px;
+  font-family: 'Avenir', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: #fea8b4;
+  
+}
+
+.spotlights-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 45.3px;
+  font-weight: 700;
+  margin: 10px 0 5px 0;
+  color: #0b0a0a;
+}
+
+.spotlights-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24.7px;
+  color: #505050;
+  margin-bottom: 40px;
+}
 
 /* ========== COMMUNITY LAYOUT ========== */
 #spotlightsContainer {
@@ -123,7 +158,7 @@ hr {
 
 /* Heights based on Canva */
 .spot-card--featured {
-  width: 300px;  
+  max-width: 280px;  
   height: 500px;
   transform: translateY(-6px);
   z-index: 1;
