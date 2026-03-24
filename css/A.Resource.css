@@ -110,7 +110,7 @@ body{
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 25px;
   padding: 10px;
 }
 
@@ -135,7 +135,7 @@ body{
   color: #000;
   text-decoration: none;
   font-weight: bold;
-  font-size: 13.4px;
+  font-size: 14px;
 }
 .resource-name a:hover {
   text-decoration: underline;
@@ -146,6 +146,7 @@ body{
 /* Text spacing */
 .resource-card p {
   margin: 4px 0;
+  font-size: 11px;
 }
 
 /* Icons row */
