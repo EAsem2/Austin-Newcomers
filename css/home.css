@@ -92,191 +92,201 @@ hr {
 }
 
 
-/* COMMUNITY SPOTLIGHTS SECTION */
-.spotlights {
-  padding: 50px 50px;
-  text-align: center;
-}
-
-.editors-box {
-  display: inline-block;
-  background-color: #ffdfe4;
-  padding: 8px 20px;
-  border-radius: 25px;
-  margin-top:35px;
-  margin-bottom: 0px;
-  font-family: 'Avenir', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 0px;
-  color: #fea8b4;
-  
-}
-
-.spotlights-title {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 45.3px;
-  font-weight: 700;
-  margin: 10px 0 5px 0;
-  color: #0b0a0a;
-}
-
-.spotlights-subtitle {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 24.7px;
-  color: #505050;
-  margin-bottom: 40px;
-}
-
-/* LAYOUT*/
-.spotlights-cards {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* all cards match tallest */
-  gap: 30px;
-  margin-top: 40px;
-}
-
+/* ========== COMMUNITY LAYOUT ========== */
 #spotlightsContainer {
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 30px;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 40px;
+  min-height: 500px; 
+}
+.spotlight-wrapper {
+  max-width: 1200px;   /* matches your site’s layout width */
+  margin: 0 auto;      /* centers it */
+  padding: 0 20px;     /* optional: keeps spacing on small screens */
 }
 
-/* CARD */
+
+/* Base card */
 .spot-card {
   flex: 1;
-  display: flex;
-  flex-direction: column;
   perspective: 1000px;
   cursor: pointer;
-  min-height: 320px; /* ensures a baseline size */
-  height: auto;      /* allows it to grow */
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 30px;
+  margin: 0; 
+  background-color: #f9f9f9;
+  font-family: 'Quicksand', sans-serif;
 }
 
+/* Heights based on Canva */
+.spot-card--featured {
+  width: 300px;  
+  height: 500px;
+  transform: translateY(-6px);
+  z-index: 1;
+}
+
+.spot-card--featured:hover , .spot-card--side:hover{
+  transform: translateY(-10px);
+}
+
+.spot-card--side {
+    max-width: 280px;     
+    flex: 0 0 350px;    
+    height: 417px;
+    z-index: 1;
+}
+
+/* Flip container */
 .spot-card-inner {
   position: relative;
-  width: 100%;
-  height: auto;
-}
-
-
-.spot-card.flipped .spot-card-inner {
-  transform: rotateY(180deg);
-}
-.spot-card-front,
-.spot-card-back {
-  position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
-  border-radius: 30px;
-  padding: 12px;
-  border: #0b0a0a 1px solid;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  font-family: 'Quicksand', sans-serif;
-  overflow: visible; /* allow full content */
-  background-color: #f9f9f9;
-}
-
-.spot-card-front,
-.spot-card-back {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-.spot-card-inner {
-  display: grid;
-  grid-template-areas: "front";
-  transition: transform 0.6s ease;
   transform-style: preserve-3d;
+  transition: transform 0.6s ease;
 }
 
 .spot-card.flipped .spot-card-inner {
   transform: rotateY(180deg);
 }
 
-.spot-card-front {
-  grid-area: front;
-  backface-visibility: hidden;
-}
-
+/* Front & Back */
+.spot-card-front,
 .spot-card-back {
-  grid-area: front;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
   position: absolute;
-  top: 0;
-  left: 0;
-}
-
-
-.spot-name {
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 35px;
-  color: #333;
-}
-
-.spot-desc {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.4;
-  margin-bottom: 4px;
-  white-space: normal;
-}
-
-.spot-desc + hr {
-  border: none;
-  border-top: .3px solid #ccc;
-  margin: 15px auto;
-  width: 80%; 
-}
-
-.spot-info {
+  inset: 0;
+  border-radius: 30px;
+  padding: 20px 22px;
+  border: 0.5px solid #000; 
+  background-color: #f9f9f9; 
+  backface-visibility: hidden;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  line-height: 1.3;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Back side */
+.spot-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Remove white block behind middle card text */
+.spot-card--featured .spot-card-front {
+  background: transparent;
+}
+
+/* Tag inside top-left */
+.tag-left {
+  font-family: 'Quicksand', sans-serif;
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  background: #fff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid #ddd;
+  z-index: 3;
+}
+
+/* TITLES */
+.spot-card--side .spot-name {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
+  margin-top: 35px;
+}
+
+.spot-card--featured .spot-name {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
+  margin-top: 48px;
+}
+
+/* DESCRIPTION + FOOTER TEXT */
+.spot-card--side .spot-desc,
+.spot-card--side .spot-info {
+  font-size: 16.8px;
+}
+
+.spot-card--featured .spot-desc,
+.spot-card--featured .spot-info {
+
+  font-size: 21.4px;
+}
+
+.spot-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .icon {
   width: 18px;
   height: 18px;
-  object-fit: contain;
 }
 
-.tag {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background-color: white;
-  padding: 4px 10px;
-  border-radius: 15px;
-  font-size: 10.9px;
-  font-weight: 600;
-  font-family: 'Quicksand', sans-serif;
-  color: #333;
-  border: 1px solid #ddd;
+/* ========== MOBILE FIXES ONLY ========== */
+@media (max-width: 768px) {
+
+  #spotlightsContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Cards stack normally */
+  .spot-card,
+  .spot-card--featured,
+  .spot-card--side {
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+
+  /* Keep flip working */
+  .spot-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+  }
+
+  /* FRONT + BACK must stay absolute to overlap */
+  .spot-card-front,
+  .spot-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  /* Fix the white background issue */
+  .spot-card-front,
+  .spot-card-back {
+    background-color: #f9f9f9;
+  }
+
+  .spot-card-back {
+    transform: rotateY(180deg);
+  }
+
+  /* Prevent stacking of front/back */
+  .spot-card {
+    min-height: 480px; /* enough space for the flip */
+  }
+
+  /* Tag stays inside */
+  .tag-left {
+    top: 12px;
+    left: 18px;
+  }
 }
 
-.spot-card-back h4 {
-  margin-bottom: 5px;
-  font-size: 16px;
-}
-
-.spot-card-back p,
-.spot-card-back a {
-  margin-bottom: 8px;
-  word-wrap: break-word;
-}
 
 @media (max-width: 600px) {
   .hero {
