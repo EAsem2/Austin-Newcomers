@@ -267,6 +267,7 @@ hr {
   height: 18px;
 }
 
+
 /* ========== MOBILE FIXES ONLY ========== */
 @media (max-width: 768px) {
 
@@ -274,7 +275,9 @@ hr {
     flex-direction: column;
     gap: 20px;
   }
-
+.spot-card--featured{
+  height: auto;
+}
   /* Cards stack normally */
   .spot-card,
   .spot-card--featured,
@@ -295,7 +298,7 @@ hr {
   /* FRONT + BACK must stay absolute to overlap */
   .spot-card-front,
   .spot-card-back {
-    position: absolute;
+    min-height: 480px; /* enough space for the flip */
     inset: 0;
     width: 100%;
     height: 100%;
@@ -323,7 +326,6 @@ hr {
     left: 18px;
   }
 }
-
 
 
 @media (max-width: 600px) {
