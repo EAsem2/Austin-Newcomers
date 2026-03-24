@@ -3,7 +3,7 @@
     "name": "Capital Metro",
     "provider": "Capital Metropolitan Transportation Authority",
     "description": "The primary public transportation provider for the Austin metropolitan area.",
-    "main_services": "Fixed-route bus service, MetroRail, MetroRapid, and Pickup (on-demand transit). + FREE FOR STUDENTS ",
+    "main_services": "Fixed-route bus service, MetroRail, MetroRapid, and Pickup (on-demand transit). FREE FOR STUDENTS",
     "cost": "Standard local fare is $1.25 per trip or $2.50 for a Day Pass.",
     "next_steps": "Use the CapMetro Trip Planner or download the Umo app to purchase fares and plan routes.",
     "website": "https://capmetro.org",
