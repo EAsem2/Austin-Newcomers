@@ -10,7 +10,7 @@ let currentSearch = "";
 // Load resources from Resources.json only
 async function loadResources() {
   try {
-    const response = await fetch("../js/Resources.json");
+    console.log("Fetching:", "../js/Resources.json");
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
