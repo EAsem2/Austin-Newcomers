@@ -6,33 +6,22 @@ let allResources = [];
 let selectedCategories = [];
 let currentSearch = "";
 
-// 1. Initialize Supabase at the top of script.js
-const SUPABASE_URL = 'https://nwbijelfjgypciwiwuig.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_yi9D3mpSgEoH9uPSdHJf3w_QJ0IU15e'; 
-const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// 2. Updated Load Function
+// Load resources from Resources.json only
 async function loadResources() {
-    try {
-        // 1. Fetch from Supabase
-        const { data: supabaseResources, error } = await _supabase
-            .from('resources')
-            .select('*');
+  try {
+    const response = await fetch("../js/Resources.json");
 
-        if (error) throw error;
-
-        // 2. Fetch your original static JSON
-        const res = await fetch("../js/Resources.json");
-        const jsonResources = await res.json();
-
-        // 3. Combine them into the global array
-        allResources = [...jsonResources, ...supabaseResources];
-        
-        // 4. Update the screen
-        renderResources();
-    } catch (err) {
-        console.error("Error loading resources:", err.message);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
+
+    allResources = await response.json();
+
+    renderResources();
+  } catch (err) {
+    console.error("Error loading resources:", err);
+  }
 }
 
 
